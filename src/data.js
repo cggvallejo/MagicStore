@@ -1,4 +1,4 @@
-const products = [
+export const products = [
     {
         "id": "mw-0",
         "name": "Magic World Exclusive Piece #1",

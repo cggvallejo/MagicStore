@@ -1,3 +1,7 @@
+import { products } from './data.js';
+
+window.products = products;
+
 /**
  * MAGIC WORLD & BERAKAH - CORE ENGINE
  * Spec: The Digital Curator

@@ -57,10 +57,11 @@
         </div>
     </footer>
 
-    <script src="src/data.js"></script>
-    <script src="src/main.js"></script>
-    <script>
-        window.BASE_IMG_PATH = 'assets/';
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+        import { products } from '/src/data.js';
+        
+        window.BASE_IMG_PATH = 'assets/products/';
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const productId = params.get('id');
@@ -88,7 +89,7 @@
                         <p class="text-2xl text-white/70 mb-12 leading-relaxed font-light">${product.description}</p>
                         
                         <div class="space-y-6">
-                            <button onclick="window.engine.addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})" 
+                            <button id="add-to-cart-btn"
                                 class="btn-primary w-full py-6 text-xl flex items-center justify-center gap-4">
                                 <span class="material-symbols-outlined text-3xl">shopping_bag</span>
                                 Añadir a la Colección
@@ -96,23 +97,21 @@
                             <p class="text-center text-sm text-white/40 font-medium tracking-wide">Exclusividad garantizada | Edición Limitada</p>
                         </div>
                     </div>
-                        <div class="mt-12 grid grid-cols-2 gap-8 pt-12 border-t border-white/10">
-                            <div class="flex gap-4">
-                                <span class="material-symbols-outlined text-primary text-3xl">verified</span>
-                                <div><p class="font-bold text-white">Autenticidad</p><p class="text-xs text-white/50">Producto 100% Original</p></div>
-                            </div>
-                            <div class="flex gap-4">
-                                <span class="material-symbols-outlined text-primary text-3xl">package_2</span>
-                                <div><p class="font-bold text-white">Premium Collection</p><p class="text-xs text-white/50">Edición Curada</p></div>
-                            </div>
-                        </div>
-                    </div>
                 `;
+
+                // Agregar evento al botón (esperando al engine global)
+                document.getElementById('add-to-cart-btn').onclick = () => {
+                    if (window.engine) {
+                        window.engine.addToCart(product);
+                    } else {
+                        console.error("[Curator] El motor no está listo.");
+                    }
+                };
             } else {
-                container.innerHTML = `<div class="col-span-full py-20 text-center"><p class="text-2xl font-bold opacity-50">Producto no encontrado</p><a href="../index.html" class="text-primary underline mt-4 inline-block">Volver al inicio</a></div>`;
+                container.innerHTML = `<div class="col-span-full py-20 text-center"><p class="text-2xl font-bold opacity-50">Producto no encontrado</p><a href="index.html" class="text-primary underline mt-4 inline-block">Volver al inicio</a></div>`;
             }
         });
     </script>
-    <script src="src/chatbot.js"></script>
+    <script type="module" src="/src/chatbot.js"></script>
 </body>
 </html>

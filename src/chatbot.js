@@ -1,3 +1,4 @@
+import './main.js';
 /**
  * VITORIA V2.1 - ELITE LUXURY CONCIERGE
  * Berakah Magic World Digital Curator & Aesthetic Guide
