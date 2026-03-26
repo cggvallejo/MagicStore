@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="src/design-system.css">
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -29,7 +29,7 @@
 <body class="bg-black text-white font-body overflow-x-hidden">
     <header class="w-full bg-black/80 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10 px-8 py-6">
         <div class="flex items-center justify-between max-w-[1440px] mx-auto">
-            <a href="../index.html" class="text-3xl font-black italic tracking-tighter text-white hover:text-primary transition-colors">
+            <a href="index.html" class="text-3xl font-black italic tracking-tighter text-white hover:text-primary transition-colors">
                 BERAKAH <span class="text-accent underline underline-offset-8 decoration-1">MAGIC WORLD</span>
             </a>
             <div class="flex items-center gap-8">
@@ -57,9 +57,10 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+    <script src="src/data.js"></script>
+    <script src="src/main.js"></script>
     <script>
+        window.BASE_IMG_PATH = 'assets/';
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const productId = params.get('id');
@@ -112,6 +113,6 @@
             }
         });
     </script>
-    <script src="chatbot.js"></script>
+    <script src="src/chatbot.js"></script>
 </body>
 </html>

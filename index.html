@@ -57,8 +57,8 @@
                     </div>
                 </a>
                 <div class="hidden lg:flex items-center gap-12 text-base font-medium text-white/60 tracking-wide">
-                    <a href="src/magicworld.html" class="hover:text-white transition-all hover:scale-105">Colecciones</a>
-                    <a href="src/berakah.html" class="hover:text-white transition-all hover:scale-105">Bolsas</a>
+                    <a href="magicworld.html" class="hover:text-white transition-all hover:scale-105">Colecciones</a>
+                    <a href="berakah.html" class="hover:text-white transition-all hover:scale-105">Bolsas</a>
                     <a href="#" class="hover:text-white transition-all hover:scale-105">Tendencias</a>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="flex items-center gap-4 text-white/60">
                     <span class="material-symbols-outlined hover:text-white cursor-pointer transition-colors">person</span>
-                    <a href="src/checkout.html" class="material-symbols-outlined hover:text-white relative transition-colors">
+                    <a href="checkout.html" class="material-symbols-outlined hover:text-white relative transition-colors">
                         shopping_bag
                         <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold hidden">0</span>
                     </a>
@@ -85,10 +85,10 @@
         <section class="mb-24 relative group">
             <div class="relative overflow-hidden rounded-[40px] h-[550px] bg-[#0a0a0a] flex flex-col md:flex-row shadow-2xl">
                 <!-- Berakah Side (Izquierda) -->
-                <a href="src/berakah.html" class="relative flex-1 overflow-hidden group/item border-b md:border-b-0 md:border-r border-white/10">
+                <a href="berakah.html" class="relative flex-1 overflow-hidden group/item border-b md:border-b-0 md:border-r border-white/10">
                     <div class="absolute inset-0">
                         <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover/item:scale-110">
-                            <source src="public/berakah_bg_video.mp4" type="video/mp4">
+                            <source src="berakah_bg_video.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     </div>
@@ -102,10 +102,10 @@
                 </a>
 
                 <!-- Magic World Side (Derecha) -->
-                <a href="src/magicworld.html" class="relative flex-1 overflow-hidden group/item">
+                <a href="magicworld.html" class="relative flex-1 overflow-hidden group/item">
                     <div class="absolute inset-0">
                         <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover/item:scale-110">
-                            <source src="public/magic_bg_video.mp4" type="video/mp4">
+                            <source src="magic_bg_video.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     </div>
@@ -159,27 +159,27 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Promo 1: Jute Bags -->
                 <div class="relative overflow-hidden rounded-[16px] h-[400px] glass group cursor-pointer">
-                    <img src="src/assets/banners/offer_jute.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Bolsas Jute"/>
+                    <img src="assets/banners/offer_jute.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Bolsas Jute"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-12">
                         <span class="text-xs font-bold text-white tracking-[0.2em] mb-4 opacity-70 group-hover:opacity-100 transition-opacity">BERAKAH</span>
                         <h3 class="text-4xl font-black text-white mb-4 tracking-tighter">Bolsas Jute <br/> <span class="text-white/60 font-light">Esencia Rústica</span></h3>
                         <p class="text-white/40 text-sm mb-6 max-w-xs">Elegancia sostenible para el día a día. Edición limitada Verano 2026.</p>
                         <!-- Dynamic Mini Products -->
                         <div id="promo-bk-products" class="flex gap-4 mb-6 animate-fade-in delay-300"></div>
-                        <a href="src/berakah.html" class="inline-flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all uppercase text-[10px] tracking-widest">Ver Colección <span class="material-symbols-outlined">arrow_forward</span></a>
+                        <a href="berakah.html" class="inline-flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all uppercase text-[10px] tracking-widest">Ver Colección <span class="material-symbols-outlined">arrow_forward</span></a>
                     </div>
                 </div>
 
                 <!-- Promo 2: Disney Collection -->
                 <div class="relative overflow-hidden rounded-[16px] h-[400px] glass group cursor-pointer border border-primary/10">
-                    <img src="src/assets/banners/star_mickey.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Disney Collection"/>
+                    <img src="assets/banners/star_mickey.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Disney Collection"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-black/60 to-black flex flex-col justify-end p-12">
                         <span class="text-lg text-[#FF2DCD] drop-shadow-[0_0_10px_rgba(255,45,205,0.4)] font-script mb-4 self-start filter brightness-110">Magic World</span>
                         <h3 class="text-4xl font-black text-white mb-4 tracking-tighter">Mickey & Friends <br/> <span class="text-white/60 font-light">The Star Edit</span></h3>
                         <p class="text-white/40 text-sm mb-6 max-w-xs">Donde la nostalgia se encuentra con el diseño digital premium.</p>
                         <!-- Dynamic Mini Products -->
                         <div id="promo-mw-products" class="flex gap-4 mb-6 animate-fade-in delay-300"></div>
-                        <a href="src/magicworld.html" class="inline-flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all uppercase text-[10px] tracking-widest">Explorar Magia <span class="material-symbols-outlined">arrow_forward</span></a>
+                        <a href="magicworld.html" class="inline-flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all uppercase text-[10px] tracking-widest">Explorar Magia <span class="material-symbols-outlined">arrow_forward</span></a>
                     </div>
                 </div>
             </div>
@@ -203,7 +203,7 @@
         </div>
     </footer>
 
-    <script>window.BASE_IMG_PATH = 'src/assets/';</script>
+    <script>window.BASE_IMG_PATH = 'assets/';</script>
     <script src="src/data.js"></script>
     <script src="src/main.js"></script>
     <script src="src/chatbot.js"></script>
