@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Finalizar Compra | Berakah Magic World</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="design-system.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff3b3b",
+                        "accent": "#ffd700",
+                    },
+                    fontFamily: { "body": ["Inter"] },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-body">
+    <header class="w-full bg-black/80 backdrop-blur-xl border-b border-white/10 py-8 sticky top-0 z-50">
+        <div class="max-w-[1440px] mx-auto px-12 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-8 group">
+                <div class="flex items-center gap-8">
+                    <img src="assets/logos/berakah_logo.png" alt="Berakah" class="h-6 object-contain invert transform -translate-y-0.5">
+                    <div class="w-px h-6 bg-white/10"></div>
+                    <img src="assets/logos/magicworld_logo.png" alt="Magic World" class="h-10 object-contain">
+                </div>
+            </a>
+            <div class="flex items-center gap-3 text-white font-black uppercase text-xs tracking-[0.3em]">
+                <span class="material-symbols-outlined text-accent animate-pulse">lock</span>
+                SECURE CHECKOUT
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto px-6 py-16">
+        <div class="grid lg:grid-cols-3 gap-16">
+            <div class="lg:col-span-2 space-y-12">
+                <h1 class="text-6xl font-black italic tracking-tighter uppercase text-white">Tu <span class="text-primary underline underline-offset-8">Selección</span></h1>
+                <div id="cart-items-container" class="space-y-6"></div>
+                <div id="empty-cart-msg" class="hidden py-40 text-center glass-card border-dashed">
+                    <span class="material-symbols-outlined text-9xl text-white/5 mb-8">shopping_bag</span>
+                    <p class="text-3xl font-black text-white/20 tracking-tighter uppercase italic">Colección Vacía</p>
+                    <a href="../index.html" class="btn-primary inline-block mt-12 px-12 py-5 text-xl">Explorar Catálogo</a>
+                </div>
+            </div>
+
+            <aside>
+                <div class="glass-card p-12 sticky top-40 border-primary/20">
+                    <h2 class="text-3xl font-black mb-10 tracking-tighter uppercase italic text-white flex justify-between items-center">
+                        Resumen
+                        <span class="badge text-xs">Premium</span>
+                    </h2>
+                    <div class="space-y-8 mb-12 text-white/60 font-medium">
+                        <div class="flex justify-between items-center">
+                            <span>Monto Base</span>
+                            <span id="subtotal-val" class="font-black text-white text-xl">$0.00</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Envío Prioritario</span>
+                            <span class="text-accent font-black uppercase tracking-widest text-xs italic">Cortesia</span>
+                        </div>
+                    </div>
+                    <div class="pt-8 border-t border-white/10 flex justify-between items-end mb-12">
+                        <div>
+                            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 block mb-2 italic">Total a Invertir</span>
+                            <span id="total-val" class="text-5xl font-black tracking-tighter text-white shadow-glow">$0.00</span>
+                        </div>
+                    </div>
+                    <button onclick="window.engine.processPayment()" class="btn-primary w-full py-6 text-xl flex items-center justify-center gap-4">
+                        Finalizar Compra
+                        <span class="material-symbols-outlined text-3xl">credit_score</span>
+                    </button>
+                    <div class="mt-12 flex items-center justify-center gap-10 opacity-30 invert hover:opacity-80 transition-opacity">
+                        <img src="https://logodownload.org/wp-content/uploads/2019/06/mercado-pago-logo-0.png" class="h-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" class="h-4">
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-black border-t border-white/5 mt-20">
+        <div class="max-w-7xl mx-auto px-8 py-16 flex flex-col items-center">
+            <div class="flex items-center gap-8 mb-8">
+                <img src="assets/logos/berakah_logo.png" alt="Berakah" class="h-6 opacity-40 hover:opacity-100 transition-opacity">
+                <div class="w-px h-6 bg-white/10"></div>
+                <img src="assets/logos/magicworld_logo.png" alt="Magic World" class="h-10 opacity-40 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+            </div>
+            <p class="text-[10px] text-white/20 uppercase tracking-[5px] mt-4">© 2026 Digital Luxury Collective. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <script src="chatbot.js"></script>
+    <script>
+        window.engine.processPayment = function() {
+            if (this.cart.length === 0) return;
+            const modal = document.createElement('div');
+            modal.className = "fixed inset-0 bg-black/80 backdrop-blur-xl z-[2000] flex items-center justify-center p-6 text-center";
+            modal.innerHTML = `
+                <div class="glass-card p-20 max-w-xl w-full text-center border-primary/40 animate-scale-in">
+                    <div class="w-40 h-40 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-12 shadow-glow">
+                        <span class="material-symbols-outlined text-8xl text-primary animate-bounce">check_circle</span>
+                    </div>
+                    <h2 class="text-6xl font-black mb-8 tracking-tighter uppercase italic text-white">¡Éxito Total!</h2>
+                    <p class="text-white/60 font-medium mb-16 text-2xl leading-relaxed">Tu inversión ha sido procesada. Recibirás tu confirmación digital en breves momentos.</p>
+                    <button onclick="window.location.href='../index.html'" class="btn-primary w-full py-6 text-xl">Regresar al Menú Principal</button>
+                </div>`;
+            document.body.appendChild(modal);
+            this.cart = [];
+            this.saveCart();
+            this.updateCartBadge();
+        };
+    </script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

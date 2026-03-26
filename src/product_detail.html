@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Detalle de Producto | Berakah Magic World</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="design-system.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff3b3b",
+                        "accent": "#ffd700",
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-body overflow-x-hidden">
+    <header class="w-full bg-black/80 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10 px-8 py-6">
+        <div class="flex items-center justify-between max-w-[1440px] mx-auto">
+            <a href="../index.html" class="text-3xl font-black italic tracking-tighter text-white hover:text-primary transition-colors">
+                BERAKAH <span class="text-accent underline underline-offset-8 decoration-1">MAGIC WORLD</span>
+            </a>
+            <div class="flex items-center gap-8">
+                <a href="checkout.html" class="relative group">
+                    <span class="material-symbols-outlined text-white text-3xl group-hover:text-primary transition-colors">shopping_bag</span>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-black animate-pulse shadow-glow">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1280px] mx-auto px-6 py-12">
+        <div id="product-detail-container" class="grid grid-cols-1 md:grid-cols-2 gap-16 animate-fade-in">
+            <!-- Loading state -->
+            <div class="flex items-center justify-center p-20 col-span-full">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-low border-t border-gray-100 mt-20">
+        <div class="max-w-7xl mx-auto px-8 py-16 text-center">
+            <span class="text-2xl font-bold tracking-tighter text-primary">Berakah | Magic World</span>
+            <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-8">© 2026 Magic World & Berakah. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+            const product = products.find(p => p.id == productId);
+
+            const container = document.getElementById('product-detail-container');
+            if (product) {
+                document.title = `${product.name} | Premium Edition`;
+                container.innerHTML = `
+                    <div class="relative group animate-fade-in">
+                        <div class="aspect-square glass-card p-0 overflow-hidden shadow-glow">
+                            <img src="assets/products/${product.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="${product.name}">
+                        </div>
+                        <div class="mt-8 grid grid-cols-4 gap-4">
+                            ${[1, 2, 3, 4].map(() => `<div class="aspect-square glass-card p-0 overflow-hidden cursor-pointer hover:border-primary transition-all opacity-80"><img src="assets/products/${product.image}" class="w-full h-full object-cover"></div>`).join('')}
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center animate-fade-in" style="animation-delay: 0.2s">
+                        <span class="badge mb-6">${product.brand} | High Fashion</span>
+                        <h1 class="text-6xl font-black text-white leading-tight mb-6 tracking-tighter uppercase italic">${product.name}</h1>
+                        <div class="flex items-center gap-8 mb-10 pb-8 border-b border-white/10">
+                            <span class="text-5xl font-black text-accent">$${product.price.toFixed(2)}</span>
+                            <span class="px-5 py-2 bg-white/10 text-white text-xs font-black rounded-full tracking-widest uppercase italic">New Season</span>
+                        </div>
+                        <p class="text-2xl text-white/70 mb-12 leading-relaxed font-light">${product.description}</p>
+                        
+                        <div class="space-y-6">
+                            <button onclick="window.engine.addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})" 
+                                class="btn-primary w-full py-6 text-xl flex items-center justify-center gap-4">
+                                <span class="material-symbols-outlined text-3xl">shopping_bag</span>
+                                Añadir a la Colección
+                            </button>
+                            <p class="text-center text-sm text-white/40 font-medium tracking-wide">Exclusividad garantizada | Edición Limitada</p>
+                        </div>
+                    </div>
+                        <div class="mt-12 grid grid-cols-2 gap-8 pt-12 border-t border-white/10">
+                            <div class="flex gap-4">
+                                <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                                <div><p class="font-bold text-white">Autenticidad</p><p class="text-xs text-white/50">Producto 100% Original</p></div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="material-symbols-outlined text-primary text-3xl">package_2</span>
+                                <div><p class="font-bold text-white">Premium Collection</p><p class="text-xs text-white/50">Edición Curada</p></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `<div class="col-span-full py-20 text-center"><p class="text-2xl font-bold opacity-50">Producto no encontrado</p><a href="../index.html" class="text-primary underline mt-4 inline-block">Volver al inicio</a></div>`;
+            }
+        });
+    </script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* ==========================================
+   BOUTIQUE MARKETPLACE - UNIFIED SYSTEM
+   Navy Blue & Champagne Gold Palette
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    /* Color Palette */
+    --color-primary: #001F3F;    /* Midnight Navy */
+    --color-secondary: #D4AF37;  /* Champagne Gold */
+    --color-bg: #F8F9FA;         /* Light Gray/White */
+    --color-white: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-text-muted: #666666;
+    --color-border: #E0E0E0;
+    --color-success: #00A650;    /* ML Green */
+    
+    /* Variables for Brands */
+    --berakah-accent: #D4AF37;
+    --magic-accent: #3483FA;
+    
+    /* Typography */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Outfit', sans-serif;
+    
+    /* Layout & Motion */
+    --container-max: 1200px;
+    --header-height: 100px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --shadow-sm: 0 1px 2px 0 rgba(0,0,0,.1);
+    --shadow-md: 0 4px 12px 0 rgba(0,0,0,.08);
+}
+
+/* Base resets */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- LOGO HUD --- */
+.ml-header {
+    background: var(--color-primary);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ml-header-top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+.ml-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.ml-search-wrap {
+    flex: 1;
+    position: relative;
+    max-width: 600px;
+}
+
+.ml-search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-user {
+    display: flex;
+    gap: 20px;
+    color: var(--color-white);
+    font-size: 0.85rem;
+    align-items: center;
+}
+
+.ml-header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.8rem;
+}
+
+.ml-nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.ml-nav-links li:hover {
+    color: var(--color-secondary);
+    cursor: pointer;
+}
+
+/* --- BANNER CAROUSEL --- */
+.hero-banner {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(45deg, #001F3F, #003366);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--color-bg), transparent);
+}
+
+/* --- SECTION GRIDS --- */
+.catalog-section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title a {
+    font-size: 0.9rem;
+    color: var(--magic-accent);
+    text-transform: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/* --- PRODUCT CARD (ML BOUTIQUE) --- */
+.product-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.product-image-wrap {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: #fdfdfd;
+    border-radius: 16px 16px 0 0;
+}
+
+.product-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.product-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 4px;
+}
+
+.product-title {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 300;
+    line-height: 1.4;
+    height: 2.8em;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.badge-free {
+    color: var(--color-success);
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.btn-add {
+    margin-top: auto;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-add:hover {
+    background: var(--color-secondary);
+}
+
+
+/* --- UTILITIES --- */
+.brand-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-secondary);
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+
+/* Banners Premium */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.bg-accent {
+    background-color: #d4af37; /* Dorado premium */
+    color: black;
+}
+
+/* Glassmorphism for Banner Buttons */
+.relative button {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Brand specific accents */
+.berakah-item .brand-label { color: var(--color-secondary); }
+.magic-item .brand-label { color: var(--magic-accent); }
