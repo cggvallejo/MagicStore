@@ -1,51 +1,94 @@
-// Disney Character Sprites for Particles
-const DISNEY_SPRITES = [
-  'https://img.icons8.com/color/96/mickey-mouse.png',
-  'https://img.icons8.com/color/96/minnie-mouse.png',
-  'https://img.icons8.com/color/96/donald-duck.png',
-  'https://img.icons8.com/color/96/stitch.png',
-  'https://img.icons8.com/color/96/winnie-the-pooh.png'
-];
+/**
+ * Premium Magic Dust Effect
+ * Creates elegant, drifting particles that react to mouse and add a luxury feel.
+ */
 
-function createDisneyParticles() {
-  const container = document.getElementById('fairy-dust');
-  if (!container) return;
+class MagicDust {
+    constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
+        
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.mouseX = 0;
+        this.mouseY = 0;
+        
+        this.init();
+        this.animate();
+        
+        window.addEventListener('resize', () => this.init());
+        document.addEventListener('mousemove', (e) => {
+            this.mouseX = e.clientX;
+            this.mouseY = e.clientY;
+        });
+    }
 
-  // Clear existing particles
-  container.innerHTML = '';
+    init() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.particles = [];
+        const count = Math.floor((this.canvas.width * this.canvas.height) / 15000);
+        
+        for (let i = 0; i < count; i++) {
+            this.particles.push(this.createParticle());
+        }
+    }
 
-  for (let i = 0; i < 30; i++) {
-    const p = document.createElement('div');
-    p.className = 'disney-particle';
-    
-    // Random sprite
-    const sprite = DISNEY_SPRITES[Math.floor(Math.random() * DISNEY_SPRITES.length)];
-    p.style.backgroundImage = `url('${sprite}')`;
-    
-    // Random position
-    p.style.left = Math.random() * 100 + '%';
-    p.style.top = Math.random() * 100 + '%';
-    
-    // Dynamic variables for CSS animation
-    const duration = 10 + Math.random() * 20; // 10-30s
-    const size = 30 + Math.random() * 40; // 30-70px
-    const tx = (Math.random() - 0.5) * 400; // -200 to 200px move
-    const ty = (Math.random() - 0.5) * 400;
-    const rot = (Math.random() - 0.5) * 360; // Random rotation
-    
-    p.style.setProperty('--duration', `${duration}s`);
-    p.style.setProperty('--size', `${size}px`);
-    p.style.setProperty('--tx', `${tx}px`);
-    p.style.setProperty('--ty', `${ty}px`);
-    p.style.setProperty('--rot', `${rot}deg`);
-    
-    p.style.animationDelay = (Math.random() * -duration) + 's';
-    
-    container.appendChild(p);
-  }
+    createParticle() {
+        const colors = ['#FF2DCD', '#8B5CF6', '#ffffff'];
+        return {
+            x: Math.random() * this.canvas.width,
+            y: Math.random() * this.canvas.height,
+            size: Math.random() * 2 + 0.5,
+            speedX: (Math.random() - 0.5) * 0.5,
+            speedY: (Math.random() - 0.5) * 0.5,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            opacity: Math.random() * 0.5 + 0.2,
+            growth: Math.random() * 0.01
+        };
+    }
+
+    draw() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        this.particles.forEach(p => {
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = p.color;
+            this.ctx.globalAlpha = p.opacity;
+            this.ctx.fill();
+            
+            // Movement
+            p.x += p.speedX;
+            p.y += p.speedY;
+            
+            // Mouse interaction (gentle attraction)
+            const dx = this.mouseX - p.x;
+            const dy = this.mouseY - p.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 200) {
+                p.x += dx * 0.001;
+                p.y += dy * 0.001;
+            }
+
+            // Boundary wrap
+            if (p.x < 0) p.x = this.canvas.width;
+            if (p.x > this.canvas.width) p.x = 0;
+            if (p.y < 0) p.y = this.canvas.height;
+            if (p.y > this.canvas.height) p.y = 0;
+            
+            // Flimmer effect
+            p.opacity += (Math.random() - 0.5) * 0.02;
+            p.opacity = Math.max(0.1, Math.min(0.7, p.opacity));
+        });
+    }
+
+    animate() {
+        this.draw();
+        requestAnimationFrame(() => this.animate());
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  createDisneyParticles();
+    new MagicDust('fairydust-canvas');
 });
-

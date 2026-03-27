@@ -1,27 +1,46 @@
-import { products } from './data.js';
+import { getProducts } from './storage.js';
 
-window.products = products;
+window.products = getProducts();
+
+// Cargar preferencias globales
+const storedPreferences = localStorage.getItem('bmw_preferences');
+if (storedPreferences) {
+    const prefs = JSON.parse(storedPreferences);
+    if (prefs.siteName) document.title = prefs.siteName;
+    if (prefs.accentColor) {
+        document.documentElement.style.setProperty('--accent', prefs.accentColor);
+    }
+}
 
 /**
- * MAGIC WORLD & BERAKAH - CORE ENGINE
- * Spec: The Digital Curator
+ * MAGIC WORLD - CORE ENGINE
+ * Spec: El Atelier de Magia
  */
 
 class DigitalCuratorEngine {
     constructor() {
         this.cart = JSON.parse(localStorage.getItem('magicworld-cart')) || [];
+        // Pagination State
+        this.currentPage = 1;
+        this.itemsPerPage = 20;
+        this.currentCategory = 'All';
+        this.currentType = 'All';
+        this.currentStyle = 'All';
+        this.currentSubCategory = 'All';
+        this.filteredProducts = [...window.products];
+        
         this.init();
     }
 
     init() {
-        console.log("[Digital Curator] Engine iniciado.");
+        console.log("[Atelier] Engine iniciado.");
         
         const start = () => {
             this.updateCartBadge();
             this.setupEventListeners();
             this.renderCheckout();
             this.setupSearch();
-            this.renderAllProducts();
+            this.updateView();
             this.renderHeroCarousel();
         };
 
@@ -30,6 +49,9 @@ class DigitalCuratorEngine {
         } else {
             start();
         }
+
+        // Exponer función para el modal
+        window.openProductModal = (id) => this.openProductModal(id);
     }
 
     renderHeroCarousel() {
@@ -38,6 +60,12 @@ class DigitalCuratorEngine {
         if (!carouselInner || !indicators) return;
 
         const basePath = window.BASE_IMG_PATH || '';
+
+        // Top 5 products by sales
+        const topProducts = [...window.products]
+            .filter(p => p.sales !== undefined)
+            .sort((a, b) => b.sales - a.sales)
+            .slice(0, 5);
 
         // Custom Hero Slide First
         const slidesData = [
@@ -48,7 +76,7 @@ class DigitalCuratorEngine {
                 image: "hero_main.png",
                 link: "#products"
             },
-            ...window.products.slice(0, 4)
+            ...topProducts
         ];
 
         carouselInner.innerHTML = "";
@@ -59,14 +87,15 @@ class DigitalCuratorEngine {
             slide.className = "min-w-full h-full relative flex items-center px-8 md:px-24";
             
             // Determinar la ruta de la imagen
-            const imgPath = product.isHero ? `${basePath}banners/${product.image}` : `${basePath}products/${product.image}`;
+            const isExternal = product.image && (product.image.startsWith('http') || product.image.startsWith('data:'));
+            const imgPath = product.isHero ? `${basePath}banners/${product.image}` : (isExternal ? product.image : `${basePath}products/${product.image}`);
 
             if (product.isHero) {
                 slide.innerHTML = `
                     <div class="relative z-10 max-w-2xl glass-card p-12 animate-fade-in ml-12">
                         <span class="badge mb-6">Lanzamiento Exclusivo</span>
                         <h2 class="text-6xl font-black text-white leading-tight mb-6 tracking-tighter uppercase italic">The Infinite <span class="text-accent">Collection</span></h2>
-                        <p class="text-xl text-white/80 mb-10 font-medium">La curaduría digital definitiva. <br/>Moda de lujo para mentes vanguardistas.</p>
+                        <p class="text-xl text-white/80 mb-10 font-medium">La asesoría digital personalizada. <br/>Moda de lujo para mentes vanguardistas.</p>
                         <div class="flex gap-6">
                             <button class="bg-white text-black px-10 py-4 rounded-full font-black uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">Explorar Ahora</button>
                         </div>
@@ -87,7 +116,7 @@ class DigitalCuratorEngine {
                         <h2 class="text-4xl font-black text-white leading-tight mb-4 tracking-tighter">${product.name}</h2>
                         <p class="text-lg text-white/70 mb-8 font-medium line-clamp-2">${product.description}</p>
                         <div class="flex gap-4 items-center">
-                            <button class="bg-white text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition-all" onclick="window.location.href='src/product_detail.html?id=${product.id}'">Ver Pieza</button>
+                            <button class="bg-white text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition-all" onclick="window.openProductModal('${product.id}')">Ver Pieza</button>
                             <span class="text-white text-2xl font-black">$${product.price.toFixed(2)}</span>
                         </div>
                     </div>
@@ -162,30 +191,53 @@ class DigitalCuratorEngine {
         this.goToSlide(prev);
     }
 
-    renderAllProducts() {
-        const homeGrid = document.getElementById('home-products');
-        const catalogGrid = document.getElementById('product-grid');
-        const brandGrid = document.getElementById('brand-grid');
-        
-        if (homeGrid) this.renderTo(homeGrid, window.products.slice(0, 12));
-        if (catalogGrid) this.renderTo(catalogGrid, window.products);
-        
-        if (brandGrid && window.BRAND_FILTER) {
-            const filtered = window.products.filter(p => p.brand === window.BRAND_FILTER);
-            this.renderTo(brandGrid, filtered);
-        }
+    updateView() {
+        this.filterProducts();
+        this.renderCatalog();
+        this.renderPagination();
     }
 
-    // renderPromoProducts eliminada por solicitud del usuario
+    filterProducts(query = '') {
+        this.filteredProducts = window.products.filter(p => {
+            const matchesCategory = this.currentCategory === 'All' || p.category === this.currentCategory;
+            const matchesType = this.currentType === 'All' || p.type === this.currentType;
+            const matchesStyle = this.currentStyle === 'All' || 
+                                (this.currentStyle === 'Edición Especial' && p.name.includes('Exclusive')) ||
+                                (this.currentStyle === 'Lujo' && p.price > 1000) ||
+                                (this.currentStyle === 'Casual' && p.price <= 1000);
+            
+            const matchesSubCategory = this.currentSubCategory === 'All' || p.itemSubCategory === this.currentSubCategory;
+            const matchesSearch = !query || 
+                p.name.toLowerCase().includes(query) || 
+                p.description.toLowerCase().includes(query) ||
+                p.brand.toLowerCase().includes(query);
+            
+            // Heuristic for Digital/Physical since data doesn't have it explicitly
+            let productType = 'Físico'; 
+            if (p.name.toLowerCase().includes('digital') || p.id.includes('dig')) productType = 'Digital';
+            
+            const matchesTypeFinal = this.currentType === 'All' || productType === this.currentType;
 
-    renderTo(container, items) {
+            return matchesCategory && matchesTypeFinal && matchesStyle && matchesSubCategory && matchesSearch;
+        });
+    }
+
+    renderCatalog() {
+        const catalogGrid = document.getElementById('product-grid');
+        if (!catalogGrid) return;
+
+        const start = (this.currentPage - 1) * this.itemsPerPage;
+        const end = start + this.itemsPerPage;
+        const paginatedItems = this.filteredProducts.slice(start, end);
+
         const basePath = window.BASE_IMG_PATH || '';
         
-        container.innerHTML = items.map(item => {
-            const imagePath = `${basePath}products/${item.image}`;
+        catalogGrid.innerHTML = paginatedItems.map(item => {
+            const isExternal = item.image && (item.image.startsWith('http') || item.image.startsWith('data:'));
+            const imagePath = isExternal ? item.image : `${basePath}products/${item.image}`;
             return `
-                <div class="glass-card group flex flex-col p-0 overflow-hidden">
-                    <div class="relative h-80 overflow-hidden cursor-pointer" onclick="window.location.href='${basePath.includes('src') ? '' : 'src/'}product_detail.html?id=${item.id}'">
+                <div class="glass-card group flex flex-col p-0 overflow-hidden animate-fade-in">
+                    <div class="relative h-80 overflow-hidden cursor-pointer" onclick="window.openProductModal('${item.id}')">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${imagePath}" loading="lazy"/>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         <span class="absolute top-4 left-4 badge">${item.brand}</span>
@@ -193,7 +245,7 @@ class DigitalCuratorEngine {
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex justify-between items-start mb-4">
                             <h4 class="text-white font-bold text-lg leading-tight group-hover:text-primary transition-colors">${item.name}</h4>
-                            <span class="text-accent font-black text-xl">$${item.price.toFixed(2)}</span>
+                            <span class="text-accent font-black text-xl">MXN$${item.price.toFixed(2)}</span>
                         </div>
                         <p class="text-white/60 text-sm mb-6 line-clamp-2 flex-1">${item.description}</p>
                         <button class="btn-primary w-full add-to-cart flex items-center justify-center gap-2" 
@@ -205,9 +257,138 @@ class DigitalCuratorEngine {
                 </div>
             `;
         }).join('');
+
+        if (paginatedItems.length === 0) {
+            catalogGrid.innerHTML = `
+                <div class="col-span-full py-20 text-center">
+                    <span class="material-symbols-outlined text-6xl text-white/10 mb-4">inventory_2</span>
+                    <p class="text-white/40 font-medium">No encontramos productos con estos filtros.</p>
+                </div>
+            `;
+        }
+    }
+
+    renderPagination() {
+        const prevBtn = document.getElementById('prev-page');
+        const nextBtn = document.getElementById('next-page');
+        const pageNumbers = document.getElementById('page-numbers');
+        const paginationInfo = document.getElementById('pagination-info');
+
+        if (!prevBtn || !nextBtn || !pageNumbers || !paginationInfo) return;
+
+        const totalPages = Math.ceil(this.filteredProducts.length / this.itemsPerPage) || 1;
+        
+        // Update text
+        paginationInfo.textContent = `Página ${this.currentPage} de ${totalPages}`;
+
+        // Update buttons
+        prevBtn.disabled = this.currentPage === 1;
+        nextBtn.disabled = this.currentPage === totalPages;
+
+        // Render numbers
+        pageNumbers.innerHTML = "";
+        for (let i = 1; i <= totalPages; i++) {
+            if (totalPages > 5) {
+                // Simplified pagination for many pages
+                if (i === 1 || i === totalPages || (i >= this.currentPage - 1 && i <= this.currentPage + 1)) {
+                    this.addPageButton(pageNumbers, i);
+                } else if (i === this.currentPage - 2 || i === this.currentPage + 2) {
+                    const dot = document.createElement('span');
+                    dot.textContent = "...";
+                    dot.className = "text-white/20 px-2";
+                    pageNumbers.appendChild(dot);
+                }
+            } else {
+                this.addPageButton(pageNumbers, i);
+            }
+        }
+    }
+
+    addPageButton(container, page) {
+        const btn = document.createElement('button');
+        btn.textContent = page;
+        btn.className = `w-10 h-10 rounded-full text-xs font-bold transition-all ${this.currentPage === page ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`;
+        btn.onclick = () => {
+            this.currentPage = page;
+            this.updateView();
+            document.getElementById('colecciones').scrollIntoView({ behavior: 'smooth' });
+        };
+        container.appendChild(btn);
+    }
+
+    openProductModal(id) {
+        const product = window.products.find(p => p.id === id);
+        if (!product) return;
+
+        const modal = document.getElementById('product-modal');
+        const img = document.getElementById('modal-img');
+        const brand = document.getElementById('modal-brand');
+        const title = document.getElementById('modal-title');
+        const price = document.getElementById('modal-price');
+        const desc = document.getElementById('modal-desc');
+        const addBtn = document.getElementById('modal-add-btn');
+
+        const basePath = window.BASE_IMG_PATH || '';
+        const isExternal = product.image && (product.image.startsWith('http') || product.image.startsWith('data:'));
+        img.src = isExternal ? product.image : `${basePath}products/${product.image}`;
+        brand.textContent = product.brand;
+        title.textContent = product.name;
+        price.textContent = `MXN$ ${product.price.toFixed(2)}`;
+        desc.textContent = product.description.substring(0, 150) + (product.description.length > 150 ? '...' : '');
+        
+        addBtn.onclick = () => {
+            this.addToCart(product);
+            this.closeModal();
+        };
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeModal() {
+        const modal = document.getElementById('product-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
     }
 
     setupEventListeners() {
+        const closeModalBtn = document.getElementById('close-modal');
+        const modal = document.getElementById('product-modal');
+        
+        if (closeModalBtn) closeModalBtn.onclick = () => this.closeModal();
+        if (modal) {
+            modal.onclick = (e) => {
+                if (e.target === modal) this.closeModal();
+            };
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') this.closeModal();
+        });
+
+        // Pagination buttons
+        const prevPage = document.getElementById('prev-page');
+        const nextPage = document.getElementById('next-page');
+        if (prevPage) prevPage.onclick = () => {
+            if (this.currentPage > 1) {
+                this.currentPage--;
+                this.updateView();
+                document.getElementById('colecciones').scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+        if (nextPage) nextPage.onclick = () => {
+            const totalPages = Math.ceil(this.filteredProducts.length / this.itemsPerPage);
+            if (this.currentPage < totalPages) {
+                this.currentPage++;
+                this.updateView();
+                document.getElementById('colecciones').scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
         document.addEventListener('click', (e) => {
             const btn = e.target.closest('.add-to-cart');
             if (btn) {
@@ -215,56 +396,57 @@ class DigitalCuratorEngine {
                     id: btn.dataset.id,
                     name: btn.dataset.name,
                     price: parseFloat(btn.dataset.price),
-                    image: btn.closest('.group')?.querySelector('img')?.src || ''
+                    image: btn.closest('.glass-card')?.querySelector('img')?.src || ''
                 };
                 this.addToCart(product);
             }
+        });
 
-            if (e.target.classList.contains('category-filter') || e.target.classList.contains('category-tab') || e.target.classList.contains('type-filter')) {
-                const category = e.target.dataset.category;
-                const type = e.target.dataset.type;
-                const container = document.getElementById('product-grid') || document.getElementById('home-products');
+        // Filter Buttons Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.onclick = () => {
+                const type = btn.dataset.type;
+                const style = btn.dataset.style;
+                const sub = btn.dataset.sub;
                 
-                if (container) {
-                    let filtered = products;
-                    if (category && category !== 'All') {
-                        filtered = products.filter(p => p.brand === category || p.category === category);
-                    }
-                    if (type && type !== 'All') {
-                        filtered = products.filter(p => p.type === type);
-                    }
-                    
-                    this.renderTo(container, filtered);
-                    
-                    const groupClass = e.target.classList.contains('type-filter') ? '.type-filter' : '.category-tab, .category-filter';
-                    document.querySelectorAll(groupClass).forEach(el => el.classList.remove('active', 'bg-primary', 'text-white'));
-                    e.target.classList.add('active', 'bg-primary', 'text-white');
+                if (type) {
+                    this.currentType = type;
+                    // Deactivate others in the same group (Format)
+                    btn.closest('.flex').querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
                 }
-            }
+                
+                if (style) {
+                    this.currentStyle = style;
+                    // Deactivate others in the same group (Style)
+                    btn.closest('.flex').querySelectorAll('[data-style]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                }
+                
+                if (sub) {
+                    this.currentSubCategory = sub;
+                    // Deactivate others in the same group (Categories)
+                    btn.closest('.filter-bar').querySelectorAll('[data-sub]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                }
+                
+                this.currentPage = 1;
+                this.updateView();
+            };
         });
     }
+
 
     setupSearch() {
         const searchInput = document.getElementById('main-search');
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase();
-                const container = document.getElementById('product-grid') || document.getElementById('home-products') || document.getElementById('brand-grid');
-                if (!container) return;
-
-                if (query.trim() === "") {
-                    // Restaurar vista original según el contenedor
-                    this.renderAllProducts();
-                    return;
-                }
-
-                const filtered = window.products.filter(p => 
-                    p.name.toLowerCase().includes(query) || 
-                    p.description.toLowerCase().includes(query) ||
-                    p.brand.toLowerCase().includes(query)
-                );
-                
-                this.renderTo(container, filtered);
+                this.currentPage = 1;
+                this.filterProducts(query);
+                this.renderCatalog();
+                this.renderPagination();
             });
         }
     }
@@ -335,11 +517,24 @@ class DigitalCuratorEngine {
     }
 
     showToast(message) {
+        let toastContainer = document.getElementById('toast-container');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toast-container';
+            toastContainer.className = "fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none";
+            document.body.appendChild(toastContainer);
+        }
+
         const toast = document.createElement('div');
-        toast.className = "fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full font-bold shadow-2xl z-[100] animate-bounce-in";
+        toast.className = "bg-gray-900 border border-white/10 text-white px-8 py-4 rounded-full font-bold shadow-2xl animate-bounce-in pointer-events-auto backdrop-blur-xl";
         toast.textContent = message;
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 3000);
+        toastContainer.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'translate-y-4');
+            toast.style.transition = 'all 0.5s ease';
+            setTimeout(() => toast.remove(), 500);
+        }, 3000);
     }
 }
 

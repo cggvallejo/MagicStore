@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Detalle de Producto | Berakah Magic World</title>
+    <title>Detalle de Producto | Magic World</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -30,7 +30,7 @@
     <header class="w-full bg-black/80 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10 px-8 py-6">
         <div class="flex items-center justify-between max-w-[1440px] mx-auto">
             <a href="index.html" class="text-3xl font-black italic tracking-tighter text-white hover:text-primary transition-colors">
-                BERAKAH <span class="text-accent underline underline-offset-8 decoration-1">MAGIC WORLD</span>
+                MAGIC <span class="text-accent underline underline-offset-8 decoration-1">WORLD</span>
             </a>
             <div class="flex items-center gap-8">
                 <a href="checkout.html" class="relative group">
@@ -52,19 +52,29 @@
 
     <footer class="bg-surface-container-low border-t border-gray-100 mt-20">
         <div class="max-w-7xl mx-auto px-8 py-16 text-center">
-            <span class="text-2xl font-bold tracking-tighter text-primary">Berakah | Magic World</span>
-            <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-8">© 2026 Magic World & Berakah. Todos los derechos reservados.</p>
+            <span class="text-2xl font-bold tracking-tighter text-primary">Magic World</span>
+            <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-8">© 2026 Magic World. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script type="module" src="/src/fairydust.js"></script>
+    <script type="module" src="/src/chatbot.js"></script>
     <script type="module" src="/src/main.js"></script>
     <script type="module">
-        import { products } from '/src/data.js';
-        
         window.BASE_IMG_PATH = 'assets/';
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const productId = params.get('id');
+            
+            // Esperar a que main.js inicialice window.products
+            // Siendo ambos módulos, se ejecutan en orden, pero a veces main.js termina antes.
+            // Para estar seguros, intentamos obtenerlo de localStorage directamente si falla.
+            const getProducts = () => {
+                const stored = localStorage.getItem('bmw_products');
+                return stored ? JSON.parse(stored) : (window.products || []);
+            };
+
+            const products = getProducts();
             const product = products.find(p => p.id == productId);
 
             const container = document.getElementById('product-detail-container');
@@ -100,18 +110,19 @@
                 `;
 
                 // Agregar evento al botón (esperando al engine global)
-                document.getElementById('add-to-cart-btn').onclick = () => {
+                const addToCart = () => {
                     if (window.engine) {
                         window.engine.addToCart(product);
                     } else {
-                        console.error("[Curator] El motor no está listo.");
+                        setTimeout(addToCart, 100);
                     }
                 };
+                document.getElementById('add-to-cart-btn').onclick = addToCart;
             } else {
                 container.innerHTML = `<div class="col-span-full py-20 text-center"><p class="text-2xl font-bold opacity-50">Producto no encontrado</p><a href="index.html" class="text-primary underline mt-4 inline-block">Volver al inicio</a></div>`;
             }
         });
     </script>
-    <script type="module" src="/src/chatbot.js"></script>
+    <script type="module" src="src/chatbot.js"></script>
 </body>
 </html>

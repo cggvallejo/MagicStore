@@ -1,66 +1,79 @@
 export const products = [
     {
         "id": "mw-0",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #1",
         "price": 450.0,
         "brand": "Magic World",
         "type": "Trends",
         "category": "Magic World",
         "image": "mw-0.jpg",
-        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad."
+        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad.",
+        "sales": 150
     },
     {
         "id": "mw-1",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #2",
         "price": 450.0,
         "brand": "Magic World",
         "type": "Trends",
         "category": "Magic World",
         "image": "mw-1.jpg",
-        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad."
+        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad.",
+        "sales": 200
     },
     {
         "id": "mw-2",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #3",
         "price": 450.0,
         "brand": "Magic World",
         "type": "Trends",
         "category": "Magic World",
         "image": "mw-2.jpg",
-        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad."
+        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad.",
+        "sales": 250
     },
     {
         "id": "mw-3",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #4",
         "price": 450.0,
         "brand": "Magic World",
         "type": "Trends",
         "category": "Magic World",
         "image": "mw-3.jpg",
-        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad."
+        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad.",
+        "sales": 300
     },
     {
         "id": "mw-4",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #5",
         "price": 450.0,
         "brand": "Magic World",
         "type": "Trends",
         "category": "Magic World",
         "image": "mw-4.jpg",
-        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad."
+        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad.",
+        "sales": 350
     },
     {
         "id": "mw-5",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #6",
         "price": 450.0,
         "brand": "Magic World",
         "type": "Trends",
         "category": "Magic World",
         "image": "mw-5.jpg",
-        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad."
+        "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad.",
+        "sales": 400
     },
     {
         "id": "mw-6",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #7",
         "price": 450.0,
         "brand": "Magic World",
@@ -71,6 +84,7 @@ export const products = [
     },
     {
         "id": "mw-7",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #8",
         "price": 450.0,
         "brand": "Magic World",
@@ -81,6 +95,7 @@ export const products = [
     },
     {
         "id": "mw-8",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #9",
         "price": 450.0,
         "brand": "Magic World",
@@ -91,6 +106,7 @@ export const products = [
     },
     {
         "id": "mw-9",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #10",
         "price": 450.0,
         "brand": "Magic World",
@@ -101,6 +117,7 @@ export const products = [
     },
     {
         "id": "mw-10",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #11",
         "price": 450.0,
         "brand": "Magic World",
@@ -111,6 +128,7 @@ export const products = [
     },
     {
         "id": "mw-11",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #12",
         "price": 450.0,
         "brand": "Magic World",
@@ -121,6 +139,7 @@ export const products = [
     },
     {
         "id": "mw-12",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #13",
         "price": 450.0,
         "brand": "Magic World",
@@ -131,6 +150,7 @@ export const products = [
     },
     {
         "id": "mw-13",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #14",
         "price": 450.0,
         "brand": "Magic World",
@@ -141,6 +161,7 @@ export const products = [
     },
     {
         "id": "mw-14",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #15",
         "price": 450.0,
         "brand": "Magic World",
@@ -151,6 +172,7 @@ export const products = [
     },
     {
         "id": "mw-15",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #16",
         "price": 450.0,
         "brand": "Magic World",
@@ -161,6 +183,7 @@ export const products = [
     },
     {
         "id": "mw-16",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #17",
         "price": 450.0,
         "brand": "Magic World",
@@ -171,6 +194,7 @@ export const products = [
     },
     {
         "id": "mw-17",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #18",
         "price": 450.0,
         "brand": "Magic World",
@@ -181,6 +205,7 @@ export const products = [
     },
     {
         "id": "mw-18",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #19",
         "price": 450.0,
         "brand": "Magic World",
@@ -191,6 +216,7 @@ export const products = [
     },
     {
         "id": "mw-19",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #20",
         "price": 450.0,
         "brand": "Magic World",
@@ -201,6 +227,7 @@ export const products = [
     },
     {
         "id": "mw-20",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #21",
         "price": 450.0,
         "brand": "Magic World",
@@ -211,6 +238,7 @@ export const products = [
     },
     {
         "id": "mw-21",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #22",
         "price": 450.0,
         "brand": "Magic World",
@@ -221,6 +249,7 @@ export const products = [
     },
     {
         "id": "mw-22",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #23",
         "price": 450.0,
         "brand": "Magic World",
@@ -231,6 +260,7 @@ export const products = [
     },
     {
         "id": "mw-23",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #24",
         "price": 450.0,
         "brand": "Magic World",
@@ -241,6 +271,7 @@ export const products = [
     },
     {
         "id": "mw-24",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #25",
         "price": 450.0,
         "brand": "Magic World",
@@ -251,6 +282,7 @@ export const products = [
     },
     {
         "id": "mw-25",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #26",
         "price": 450.0,
         "brand": "Magic World",
@@ -261,6 +293,7 @@ export const products = [
     },
     {
         "id": "mw-26",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #27",
         "price": 450.0,
         "brand": "Magic World",
@@ -271,6 +304,7 @@ export const products = [
     },
     {
         "id": "mw-27",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #28",
         "price": 450.0,
         "brand": "Magic World",
@@ -281,6 +315,7 @@ export const products = [
     },
     {
         "id": "mw-28",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #29",
         "price": 450.0,
         "brand": "Magic World",
@@ -291,6 +326,7 @@ export const products = [
     },
     {
         "id": "mw-29",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #30",
         "price": 450.0,
         "brand": "Magic World",
@@ -301,6 +337,7 @@ export const products = [
     },
     {
         "id": "mw-30",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #31",
         "price": 450.0,
         "brand": "Magic World",
@@ -311,6 +348,7 @@ export const products = [
     },
     {
         "id": "mw-31",
+        "itemSubCategory": "Tazas",
         "name": "Magic World Exclusive Piece #32",
         "price": 450.0,
         "brand": "Magic World",
@@ -321,6 +359,7 @@ export const products = [
     },
     {
         "id": "mw-32",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #33",
         "price": 450.0,
         "brand": "Magic World",
@@ -331,6 +370,7 @@ export const products = [
     },
     {
         "id": "mw-33",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #34",
         "price": 450.0,
         "brand": "Magic World",
@@ -341,6 +381,7 @@ export const products = [
     },
     {
         "id": "mw-34",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #35",
         "price": 450.0,
         "brand": "Magic World",
@@ -351,6 +392,7 @@ export const products = [
     },
     {
         "id": "mw-35",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #36",
         "price": 450.0,
         "brand": "Magic World",
@@ -361,6 +403,7 @@ export const products = [
     },
     {
         "id": "mw-36",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #37",
         "price": 450.0,
         "brand": "Magic World",
@@ -371,6 +414,7 @@ export const products = [
     },
     {
         "id": "mw-37",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #38",
         "price": 450.0,
         "brand": "Magic World",
@@ -381,6 +425,7 @@ export const products = [
     },
     {
         "id": "mw-38",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #39",
         "price": 450.0,
         "brand": "Magic World",
@@ -391,6 +436,7 @@ export const products = [
     },
     {
         "id": "mw-39",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #40",
         "price": 450.0,
         "brand": "Magic World",
@@ -401,6 +447,7 @@ export const products = [
     },
     {
         "id": "mw-40",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #41",
         "price": 450.0,
         "brand": "Magic World",
@@ -411,6 +458,7 @@ export const products = [
     },
     {
         "id": "mw-41",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #42",
         "price": 450.0,
         "brand": "Magic World",
@@ -421,6 +469,7 @@ export const products = [
     },
     {
         "id": "mw-42",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #43",
         "price": 450.0,
         "brand": "Magic World",
@@ -431,6 +480,7 @@ export const products = [
     },
     {
         "id": "mw-43",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #44",
         "price": 450.0,
         "brand": "Magic World",
@@ -441,6 +491,7 @@ export const products = [
     },
     {
         "id": "mw-44",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #45",
         "price": 450.0,
         "brand": "Magic World",
@@ -451,6 +502,7 @@ export const products = [
     },
     {
         "id": "mw-45",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #46",
         "price": 450.0,
         "brand": "Magic World",
@@ -461,6 +513,7 @@ export const products = [
     },
     {
         "id": "mw-46",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #47",
         "price": 450.0,
         "brand": "Magic World",
@@ -471,6 +524,7 @@ export const products = [
     },
     {
         "id": "mw-47",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #48",
         "price": 450.0,
         "brand": "Magic World",
@@ -481,6 +535,7 @@ export const products = [
     },
     {
         "id": "mw-48",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #49",
         "price": 450.0,
         "brand": "Magic World",
@@ -491,6 +546,7 @@ export const products = [
     },
     {
         "id": "mw-49",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #50",
         "price": 450.0,
         "brand": "Magic World",
@@ -501,6 +557,7 @@ export const products = [
     },
     {
         "id": "mw-50",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #51",
         "price": 450.0,
         "brand": "Magic World",
@@ -511,6 +568,7 @@ export const products = [
     },
     {
         "id": "mw-51",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #52",
         "price": 450.0,
         "brand": "Magic World",
@@ -521,6 +579,7 @@ export const products = [
     },
     {
         "id": "mw-52",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #53",
         "price": 450.0,
         "brand": "Magic World",
@@ -531,6 +590,7 @@ export const products = [
     },
     {
         "id": "mw-53",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #54",
         "price": 450.0,
         "brand": "Magic World",
@@ -541,6 +601,7 @@ export const products = [
     },
     {
         "id": "mw-54",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #55",
         "price": 450.0,
         "brand": "Magic World",
@@ -551,6 +612,7 @@ export const products = [
     },
     {
         "id": "mw-55",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #56",
         "price": 450.0,
         "brand": "Magic World",
@@ -561,6 +623,7 @@ export const products = [
     },
     {
         "id": "mw-56",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #57",
         "price": 450.0,
         "brand": "Magic World",
@@ -571,6 +634,7 @@ export const products = [
     },
     {
         "id": "mw-57",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #58",
         "price": 450.0,
         "brand": "Magic World",
@@ -581,6 +645,7 @@ export const products = [
     },
     {
         "id": "mw-58",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #59",
         "price": 450.0,
         "brand": "Magic World",
@@ -591,6 +656,7 @@ export const products = [
     },
     {
         "id": "mw-59",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #60",
         "price": 450.0,
         "brand": "Magic World",
@@ -601,6 +667,7 @@ export const products = [
     },
     {
         "id": "mw-60",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #61",
         "price": 450.0,
         "brand": "Magic World",
@@ -611,6 +678,7 @@ export const products = [
     },
     {
         "id": "mw-61",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #62",
         "price": 450.0,
         "brand": "Magic World",
@@ -621,6 +689,7 @@ export const products = [
     },
     {
         "id": "mw-62",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #63",
         "price": 450.0,
         "brand": "Magic World",
@@ -631,6 +700,7 @@ export const products = [
     },
     {
         "id": "mw-63",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #64",
         "price": 450.0,
         "brand": "Magic World",
@@ -641,6 +711,7 @@ export const products = [
     },
     {
         "id": "mw-64",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #65",
         "price": 450.0,
         "brand": "Magic World",
@@ -651,6 +722,7 @@ export const products = [
     },
     {
         "id": "mw-65",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #66",
         "price": 450.0,
         "brand": "Magic World",
@@ -661,6 +733,7 @@ export const products = [
     },
     {
         "id": "mw-66",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #67",
         "price": 450.0,
         "brand": "Magic World",
@@ -671,6 +744,7 @@ export const products = [
     },
     {
         "id": "mw-67",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #68",
         "price": 450.0,
         "brand": "Magic World",
@@ -681,6 +755,7 @@ export const products = [
     },
     {
         "id": "mw-68",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #69",
         "price": 450.0,
         "brand": "Magic World",
@@ -691,6 +766,7 @@ export const products = [
     },
     {
         "id": "mw-69",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #70",
         "price": 450.0,
         "brand": "Magic World",
@@ -701,6 +777,7 @@ export const products = [
     },
     {
         "id": "mw-70",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #71",
         "price": 450.0,
         "brand": "Magic World",
@@ -711,6 +788,7 @@ export const products = [
     },
     {
         "id": "mw-71",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #72",
         "price": 450.0,
         "brand": "Magic World",
@@ -721,6 +799,7 @@ export const products = [
     },
     {
         "id": "mw-72",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #73",
         "price": 450.0,
         "brand": "Magic World",
@@ -731,6 +810,7 @@ export const products = [
     },
     {
         "id": "mw-73",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #74",
         "price": 450.0,
         "brand": "Magic World",
@@ -741,6 +821,7 @@ export const products = [
     },
     {
         "id": "mw-74",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #75",
         "price": 450.0,
         "brand": "Magic World",
@@ -751,6 +832,7 @@ export const products = [
     },
     {
         "id": "mw-75",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #76",
         "price": 450.0,
         "brand": "Magic World",
@@ -761,6 +843,7 @@ export const products = [
     },
     {
         "id": "mw-76",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #77",
         "price": 450.0,
         "brand": "Magic World",
@@ -771,6 +854,7 @@ export const products = [
     },
     {
         "id": "mw-77",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #78",
         "price": 450.0,
         "brand": "Magic World",
@@ -781,6 +865,7 @@ export const products = [
     },
     {
         "id": "mw-78",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #79",
         "price": 450.0,
         "brand": "Magic World",
@@ -791,6 +876,7 @@ export const products = [
     },
     {
         "id": "mw-79",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #80",
         "price": 450.0,
         "brand": "Magic World",
@@ -801,6 +887,7 @@ export const products = [
     },
     {
         "id": "mw-80",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #81",
         "price": 450.0,
         "brand": "Magic World",
@@ -811,6 +898,7 @@ export const products = [
     },
     {
         "id": "mw-81",
+        "itemSubCategory": "Vasos y Termos",
         "name": "Magic World Exclusive Piece #82",
         "price": 450.0,
         "brand": "Magic World",
@@ -821,6 +909,7 @@ export const products = [
     },
     {
         "id": "mw-82",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #83",
         "price": 450.0,
         "brand": "Magic World",
@@ -831,6 +920,7 @@ export const products = [
     },
     {
         "id": "mw-83",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #84",
         "price": 450.0,
         "brand": "Magic World",
@@ -841,6 +931,7 @@ export const products = [
     },
     {
         "id": "mw-84",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #85",
         "price": 450.0,
         "brand": "Magic World",
@@ -851,6 +942,7 @@ export const products = [
     },
     {
         "id": "mw-85",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #86",
         "price": 450.0,
         "brand": "Magic World",
@@ -861,6 +953,7 @@ export const products = [
     },
     {
         "id": "mw-86",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #87",
         "price": 450.0,
         "brand": "Magic World",
@@ -871,6 +964,7 @@ export const products = [
     },
     {
         "id": "mw-87",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #88",
         "price": 450.0,
         "brand": "Magic World",
@@ -881,6 +975,7 @@ export const products = [
     },
     {
         "id": "mw-88",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #89",
         "price": 450.0,
         "brand": "Magic World",
@@ -891,6 +986,7 @@ export const products = [
     },
     {
         "id": "mw-89",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #90",
         "price": 450.0,
         "brand": "Magic World",
@@ -901,6 +997,7 @@ export const products = [
     },
     {
         "id": "mw-90",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #91",
         "price": 450.0,
         "brand": "Magic World",
@@ -911,6 +1008,7 @@ export const products = [
     },
     {
         "id": "mw-91",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #92",
         "price": 450.0,
         "brand": "Magic World",
@@ -921,6 +1019,7 @@ export const products = [
     },
     {
         "id": "mw-92",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #93",
         "price": 450.0,
         "brand": "Magic World",
@@ -931,6 +1030,7 @@ export const products = [
     },
     {
         "id": "mw-93",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #94",
         "price": 450.0,
         "brand": "Magic World",
@@ -941,6 +1041,7 @@ export const products = [
     },
     {
         "id": "mw-94",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #95",
         "price": 450.0,
         "brand": "Magic World",
@@ -951,6 +1052,7 @@ export const products = [
     },
     {
         "id": "mw-95",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #96",
         "price": 450.0,
         "brand": "Magic World",
@@ -961,6 +1063,7 @@ export const products = [
     },
     {
         "id": "mw-96",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #97",
         "price": 450.0,
         "brand": "Magic World",
@@ -971,6 +1074,7 @@ export const products = [
     },
     {
         "id": "mw-97",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #98",
         "price": 450.0,
         "brand": "Magic World",
@@ -981,6 +1085,7 @@ export const products = [
     },
     {
         "id": "mw-98",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #99",
         "price": 450.0,
         "brand": "Magic World",
@@ -991,6 +1096,7 @@ export const products = [
     },
     {
         "id": "mw-99",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #100",
         "price": 450.0,
         "brand": "Magic World",
@@ -1001,6 +1107,7 @@ export const products = [
     },
     {
         "id": "mw-100",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #101",
         "price": 450.0,
         "brand": "Magic World",
@@ -1011,6 +1118,7 @@ export const products = [
     },
     {
         "id": "mw-101",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #102",
         "price": 450.0,
         "brand": "Magic World",
@@ -1021,6 +1129,7 @@ export const products = [
     },
     {
         "id": "mw-102",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #103",
         "price": 450.0,
         "brand": "Magic World",
@@ -1031,6 +1140,7 @@ export const products = [
     },
     {
         "id": "mw-103",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #104",
         "price": 450.0,
         "brand": "Magic World",
@@ -1041,6 +1151,7 @@ export const products = [
     },
     {
         "id": "mw-104",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #105",
         "price": 450.0,
         "brand": "Magic World",
@@ -1051,6 +1162,7 @@ export const products = [
     },
     {
         "id": "mw-105",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #106",
         "price": 450.0,
         "brand": "Magic World",
@@ -1061,6 +1173,7 @@ export const products = [
     },
     {
         "id": "mw-106",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #107",
         "price": 450.0,
         "brand": "Magic World",
@@ -1071,6 +1184,7 @@ export const products = [
     },
     {
         "id": "mw-107",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #108",
         "price": 450.0,
         "brand": "Magic World",
@@ -1081,6 +1195,7 @@ export const products = [
     },
     {
         "id": "mw-108",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #109",
         "price": 450.0,
         "brand": "Magic World",
@@ -1091,6 +1206,7 @@ export const products = [
     },
     {
         "id": "mw-109",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #110",
         "price": 450.0,
         "brand": "Magic World",
@@ -1101,6 +1217,7 @@ export const products = [
     },
     {
         "id": "mw-110",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #111",
         "price": 450.0,
         "brand": "Magic World",
@@ -1111,6 +1228,7 @@ export const products = [
     },
     {
         "id": "mw-111",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #112",
         "price": 450.0,
         "brand": "Magic World",
@@ -1121,6 +1239,7 @@ export const products = [
     },
     {
         "id": "mw-112",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #113",
         "price": 450.0,
         "brand": "Magic World",
@@ -1131,6 +1250,7 @@ export const products = [
     },
     {
         "id": "mw-113",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #114",
         "price": 450.0,
         "brand": "Magic World",
@@ -1141,6 +1261,7 @@ export const products = [
     },
     {
         "id": "mw-114",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #115",
         "price": 450.0,
         "brand": "Magic World",
@@ -1151,6 +1272,7 @@ export const products = [
     },
     {
         "id": "mw-115",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #116",
         "price": 450.0,
         "brand": "Magic World",
@@ -1161,6 +1283,7 @@ export const products = [
     },
     {
         "id": "mw-116",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #117",
         "price": 450.0,
         "brand": "Magic World",
@@ -1171,6 +1294,7 @@ export const products = [
     },
     {
         "id": "mw-117",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #118",
         "price": 450.0,
         "brand": "Magic World",
@@ -1181,6 +1305,7 @@ export const products = [
     },
     {
         "id": "mw-118",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #119",
         "price": 450.0,
         "brand": "Magic World",
@@ -1191,6 +1316,7 @@ export const products = [
     },
     {
         "id": "mw-119",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #120",
         "price": 450.0,
         "brand": "Magic World",
@@ -1201,6 +1327,7 @@ export const products = [
     },
     {
         "id": "mw-120",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #121",
         "price": 450.0,
         "brand": "Magic World",
@@ -1211,6 +1338,7 @@ export const products = [
     },
     {
         "id": "mw-121",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #122",
         "price": 450.0,
         "brand": "Magic World",
@@ -1221,6 +1349,7 @@ export const products = [
     },
     {
         "id": "mw-122",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #123",
         "price": 450.0,
         "brand": "Magic World",
@@ -1231,6 +1360,7 @@ export const products = [
     },
     {
         "id": "mw-123",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #124",
         "price": 450.0,
         "brand": "Magic World",
@@ -1241,6 +1371,7 @@ export const products = [
     },
     {
         "id": "mw-124",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #125",
         "price": 450.0,
         "brand": "Magic World",
@@ -1251,6 +1382,7 @@ export const products = [
     },
     {
         "id": "mw-125",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #126",
         "price": 450.0,
         "brand": "Magic World",
@@ -1261,6 +1393,7 @@ export const products = [
     },
     {
         "id": "mw-126",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #127",
         "price": 450.0,
         "brand": "Magic World",
@@ -1271,6 +1404,7 @@ export const products = [
     },
     {
         "id": "mw-127",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #128",
         "price": 450.0,
         "brand": "Magic World",
@@ -1281,6 +1415,7 @@ export const products = [
     },
     {
         "id": "mw-128",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #129",
         "price": 450.0,
         "brand": "Magic World",
@@ -1291,6 +1426,7 @@ export const products = [
     },
     {
         "id": "mw-129",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #130",
         "price": 450.0,
         "brand": "Magic World",
@@ -1301,6 +1437,7 @@ export const products = [
     },
     {
         "id": "mw-130",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #131",
         "price": 450.0,
         "brand": "Magic World",
@@ -1311,6 +1448,7 @@ export const products = [
     },
     {
         "id": "mw-131",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #132",
         "price": 450.0,
         "brand": "Magic World",
@@ -1321,6 +1459,7 @@ export const products = [
     },
     {
         "id": "mw-132",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #133",
         "price": 450.0,
         "brand": "Magic World",
@@ -1331,6 +1470,7 @@ export const products = [
     },
     {
         "id": "mw-133",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #134",
         "price": 450.0,
         "brand": "Magic World",
@@ -1341,6 +1481,7 @@ export const products = [
     },
     {
         "id": "mw-134",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #135",
         "price": 450.0,
         "brand": "Magic World",
@@ -1351,6 +1492,7 @@ export const products = [
     },
     {
         "id": "mw-135",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #136",
         "price": 450.0,
         "brand": "Magic World",
@@ -1361,6 +1503,7 @@ export const products = [
     },
     {
         "id": "mw-136",
+        "itemSubCategory": "Loncheras",
         "name": "Magic World Exclusive Piece #137",
         "price": 450.0,
         "brand": "Magic World",
@@ -1371,6 +1514,7 @@ export const products = [
     },
     {
         "id": "mw-137",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #138",
         "price": 450.0,
         "brand": "Magic World",
@@ -1381,6 +1525,7 @@ export const products = [
     },
     {
         "id": "mw-138",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #139",
         "price": 450.0,
         "brand": "Magic World",
@@ -1391,6 +1536,7 @@ export const products = [
     },
     {
         "id": "mw-139",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #140",
         "price": 450.0,
         "brand": "Magic World",
@@ -1401,6 +1547,7 @@ export const products = [
     },
     {
         "id": "mw-140",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #141",
         "price": 450.0,
         "brand": "Magic World",
@@ -1411,6 +1558,7 @@ export const products = [
     },
     {
         "id": "mw-141",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #142",
         "price": 450.0,
         "brand": "Magic World",
@@ -1421,6 +1569,7 @@ export const products = [
     },
     {
         "id": "mw-142",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #143",
         "price": 450.0,
         "brand": "Magic World",
@@ -1431,6 +1580,7 @@ export const products = [
     },
     {
         "id": "mw-143",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #144",
         "price": 450.0,
         "brand": "Magic World",
@@ -1441,6 +1591,7 @@ export const products = [
     },
     {
         "id": "mw-144",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #145",
         "price": 450.0,
         "brand": "Magic World",
@@ -1451,6 +1602,7 @@ export const products = [
     },
     {
         "id": "mw-145",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #146",
         "price": 450.0,
         "brand": "Magic World",
@@ -1461,6 +1613,7 @@ export const products = [
     },
     {
         "id": "mw-146",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #147",
         "price": 450.0,
         "brand": "Magic World",
@@ -1471,6 +1624,7 @@ export const products = [
     },
     {
         "id": "mw-147",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #148",
         "price": 450.0,
         "brand": "Magic World",
@@ -1481,6 +1635,7 @@ export const products = [
     },
     {
         "id": "mw-148",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #149",
         "price": 450.0,
         "brand": "Magic World",
@@ -1491,6 +1646,7 @@ export const products = [
     },
     {
         "id": "mw-149",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #150",
         "price": 450.0,
         "brand": "Magic World",
@@ -1501,6 +1657,7 @@ export const products = [
     },
     {
         "id": "mw-150",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #151",
         "price": 450.0,
         "brand": "Magic World",
@@ -1511,6 +1668,7 @@ export const products = [
     },
     {
         "id": "mw-151",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #152",
         "price": 450.0,
         "brand": "Magic World",
@@ -1521,6 +1679,7 @@ export const products = [
     },
     {
         "id": "mw-152",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #153",
         "price": 450.0,
         "brand": "Magic World",
@@ -1531,6 +1690,7 @@ export const products = [
     },
     {
         "id": "mw-153",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #154",
         "price": 450.0,
         "brand": "Magic World",
@@ -1541,6 +1701,7 @@ export const products = [
     },
     {
         "id": "mw-154",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #155",
         "price": 450.0,
         "brand": "Magic World",
@@ -1551,6 +1712,7 @@ export const products = [
     },
     {
         "id": "mw-155",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #156",
         "price": 450.0,
         "brand": "Magic World",
@@ -1561,6 +1723,7 @@ export const products = [
     },
     {
         "id": "mw-156",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #157",
         "price": 450.0,
         "brand": "Magic World",
@@ -1571,6 +1734,7 @@ export const products = [
     },
     {
         "id": "mw-157",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #158",
         "price": 450.0,
         "brand": "Magic World",
@@ -1581,6 +1745,7 @@ export const products = [
     },
     {
         "id": "mw-158",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #159",
         "price": 450.0,
         "brand": "Magic World",
@@ -1591,6 +1756,7 @@ export const products = [
     },
     {
         "id": "mw-159",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #160",
         "price": 450.0,
         "brand": "Magic World",
@@ -1601,6 +1767,7 @@ export const products = [
     },
     {
         "id": "mw-160",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #161",
         "price": 450.0,
         "brand": "Magic World",
@@ -1611,6 +1778,7 @@ export const products = [
     },
     {
         "id": "mw-161",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #162",
         "price": 450.0,
         "brand": "Magic World",
@@ -1621,6 +1789,7 @@ export const products = [
     },
     {
         "id": "mw-162",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #163",
         "price": 450.0,
         "brand": "Magic World",
@@ -1631,6 +1800,7 @@ export const products = [
     },
     {
         "id": "mw-163",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #164",
         "price": 450.0,
         "brand": "Magic World",
@@ -1641,6 +1811,7 @@ export const products = [
     },
     {
         "id": "mw-164",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #165",
         "price": 450.0,
         "brand": "Magic World",
@@ -1651,6 +1822,7 @@ export const products = [
     },
     {
         "id": "mw-165",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #166",
         "price": 450.0,
         "brand": "Magic World",
@@ -1661,6 +1833,7 @@ export const products = [
     },
     {
         "id": "mw-166",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #167",
         "price": 450.0,
         "brand": "Magic World",
@@ -1671,6 +1844,7 @@ export const products = [
     },
     {
         "id": "mw-167",
+        "itemSubCategory": "Accesorios",
         "name": "Magic World Exclusive Piece #168",
         "price": 450.0,
         "brand": "Magic World",
@@ -1679,386 +1853,7 @@ export const products = [
         "image": "mw-167.jpg",
         "description": "Producto auténtico de la colección Magic World. Elaborado con materiales de alta calidad."
     },
-    {
-        "id": "bk-0",
-        "name": "Berakah Exclusive Piece #1",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-0.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-1",
-        "name": "Berakah Exclusive Piece #2",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-1.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-2",
-        "name": "Berakah Exclusive Piece #3",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-2.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-3",
-        "name": "Berakah Exclusive Piece #4",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-3.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-4",
-        "name": "Berakah Exclusive Piece #5",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-4.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-5",
-        "name": "Berakah Exclusive Piece #6",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-5.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-6",
-        "name": "Berakah Exclusive Piece #7",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-6.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-7",
-        "name": "Berakah Exclusive Piece #8",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-7.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-8",
-        "name": "Berakah Exclusive Piece #9",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-8.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-9",
-        "name": "Berakah Exclusive Piece #10",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-9.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-10",
-        "name": "Berakah Exclusive Piece #11",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-10.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-11",
-        "name": "Berakah Exclusive Piece #12",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-11.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-12",
-        "name": "Berakah Exclusive Piece #13",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-12.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-13",
-        "name": "Berakah Exclusive Piece #14",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-13.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-14",
-        "name": "Berakah Exclusive Piece #15",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-14.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-16",
-        "name": "Berakah Exclusive Piece #17",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-16.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-17",
-        "name": "Berakah Exclusive Piece #18",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-17.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-18",
-        "name": "Berakah Exclusive Piece #19",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-18.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-19",
-        "name": "Berakah Exclusive Piece #20",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-19.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-20",
-        "name": "Berakah Exclusive Piece #21",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-20.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-21",
-        "name": "Berakah Exclusive Piece #22",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-21.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-22",
-        "name": "Berakah Exclusive Piece #23",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-22.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-23",
-        "name": "Berakah Exclusive Piece #24",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-23.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-24",
-        "name": "Berakah Exclusive Piece #25",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-24.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-25",
-        "name": "Berakah Exclusive Piece #26",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-25.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-26",
-        "name": "Berakah Exclusive Piece #27",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-26.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-27",
-        "name": "Berakah Exclusive Piece #28",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-27.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-28",
-        "name": "Berakah Exclusive Piece #29",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-28.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-29",
-        "name": "Berakah Exclusive Piece #30",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-29.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-30",
-        "name": "Berakah Exclusive Piece #31",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-30.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-31",
-        "name": "Berakah Exclusive Piece #32",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-31.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-32",
-        "name": "Berakah Exclusive Piece #33",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-32.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-33",
-        "name": "Berakah Exclusive Piece #34",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-33.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-34",
-        "name": "Berakah Exclusive Piece #35",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-34.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-35",
-        "name": "Berakah Exclusive Piece #36",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-35.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-36",
-        "name": "Berakah Exclusive Piece #37",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-36.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-37",
-        "name": "Berakah Exclusive Piece #38",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-37.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    },
-    {
-        "id": "bk-38",
-        "name": "Berakah Exclusive Piece #39",
-        "price": 350.0,
-        "brand": "Berakah",
-        "type": "Bolsas",
-        "category": "Berakah",
-        "image": "bk-38.jpg",
-        "description": "Producto auténtico de la colección Berakah. Elaborado con materiales de alta calidad."
-    }
+
 ];
 
 if (typeof window !== 'undefined') {
