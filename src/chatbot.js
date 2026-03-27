@@ -299,12 +299,12 @@ const vitoriaBot = {
                 return;
             }
 
-            if (text.includes('berakah') || text.includes('colección berakah')) {
+            if (text.includes('Berakah') || text.includes('colección Berakah')) {
                 this.suggestProducts('Berakah');
                 return;
             }
 
-            if (text.includes('magic world') || text.includes('shop magic')) {
+            if (text.includes('Magic World') || text.includes('shop magic')) {
                 this.suggestProducts('Magic World');
                 return;
             }

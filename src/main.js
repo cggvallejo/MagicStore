@@ -22,7 +22,6 @@ class DigitalCuratorEngine {
             this.renderCheckout();
             this.setupSearch();
             this.renderAllProducts();
-            this.renderPromoProducts();
             this.renderHeroCarousel();
         };
 
@@ -43,14 +42,13 @@ class DigitalCuratorEngine {
         // Custom Hero Slide First
         const slidesData = [
             {
-                isHero: true, // Keep isHero for the rendering logic
+                isHero: true,
                 title: "Nueva Colección 2026",
                 subtitle: "La magia de lo exclusivo en tus manos.",
-                image: "hero_main.png", // Path relative to basePath + banners/
+                image: "hero_main.png",
                 link: "#products"
             },
-            ...window.products.filter(p => p.brand === "Magic World").slice(0, 2),
-            ...window.products.filter(p => p.brand === "Berakah").slice(0, 2)
+            ...window.products.slice(0, 4)
         ];
 
         carouselInner.innerHTML = "";
@@ -178,31 +176,7 @@ class DigitalCuratorEngine {
         }
     }
 
-    renderPromoProducts() {
-        const bkContainer = document.getElementById('promo-bk-products');
-        const mwContainer = document.getElementById('promo-mw-products');
-        const basePath = window.BASE_IMG_PATH || '';
-
-        if (bkContainer) {
-            const bkProducts = window.products.filter(p => p.brand === "Berakah").slice(0, 3);
-            bkContainer.innerHTML = bkProducts.map(p => `
-                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 hover:border-white transition-all cursor-pointer shadow-lg" 
-                     onclick="window.location.href='src/product_detail.html?id=${p.id}'" title="${p.name}">
-                    <img src="${basePath}products/${p.image}" class="w-full h-full object-cover">
-                </div>
-            `).join('');
-        }
-
-        if (mwContainer) {
-            const mwProducts = window.products.filter(p => p.brand === "Magic World").slice(0, 3);
-            mwContainer.innerHTML = mwProducts.map(p => `
-                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/40 hover:border-primary transition-all cursor-pointer shadow-lg" 
-                     onclick="window.location.href='src/product_detail.html?id=${p.id}'" title="${p.name}">
-                    <img src="${basePath}products/${p.image}" class="w-full h-full object-cover">
-                </div>
-            `).join('');
-        }
-    }
+    // renderPromoProducts eliminada por solicitud del usuario
 
     renderTo(container, items) {
         const basePath = window.BASE_IMG_PATH || '';
