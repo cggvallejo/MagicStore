@@ -27,7 +27,7 @@ class MagicDust {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
         this.particles = [];
-        const count = Math.floor((this.canvas.width * this.canvas.height) / 15000);
+        const count = Math.floor((this.canvas.width * this.canvas.height) / 8000);
         
         for (let i = 0; i < count; i++) {
             this.particles.push(this.createParticle());
