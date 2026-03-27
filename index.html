@@ -268,5 +268,20 @@
         </div>
     </div>
     <canvas id="fairydust-canvas" class="fixed inset-0 pointer-events-none z-[60]"></canvas>
+    <script>
+        // Asegurar que el video del hero no se pause
+        const heroVideo = document.querySelector('section video');
+        if (heroVideo) {
+            heroVideo.play().catch(() => {});
+            heroVideo.addEventListener('pause', () => {
+                if (!heroVideo.seeking) {
+                    heroVideo.play().catch(() => {});
+                }
+            });
+            // Autoplay fallback on user interaction
+            document.addEventListener('mousedown', () => heroVideo.play().catch(() => {}), { once: true });
+            document.addEventListener('touchstart', () => heroVideo.play().catch(() => {}), { once: true });
+        }
+    </script>
 </body>
 </html>
