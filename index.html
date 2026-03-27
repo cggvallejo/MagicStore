@@ -47,6 +47,16 @@
             100% { transform: translateY(0px) rotate(0deg); }
         }
         .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .neon-border-pink {
+            border: 1px solid rgba(255, 45, 205, 0.3);
+            box-shadow: 0 0 30px rgba(255, 45, 205, 0.2), inset 0 0 20px rgba(255, 45, 205, 0.1);
+            transition: all 0.5s ease;
+        }
+        .neon-border-pink:hover {
+            border: 1px solid rgba(255, 45, 205, 0.6);
+            box-shadow: 0 0 50px rgba(255, 45, 205, 0.4), inset 0 0 30px rgba(255, 45, 205, 0.2);
+        }
     </style>
     <script type="module" src="/src/fairydust.js"></script>
     <script type="module" src="/src/chatbot.js"></script>
@@ -85,7 +95,7 @@
 
     <main class="max-w-[1440px] mx-auto px-6 pt-32 pb-24">
         <!-- Hero Section -->
-        <section class="mb-24 relative overflow-hidden rounded-[40px] h-[700px] shadow-2xl">
+        <section class="mb-24 relative overflow-hidden rounded-[40px] h-[700px] shadow-2xl neon-border-pink">
             <div class="absolute inset-0">
                 <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60">
                     <source src="magic_bg_video.mp4" type="video/mp4">
