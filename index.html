@@ -48,22 +48,21 @@
         }
         .animate-float { animation: float 6s ease-in-out infinite; }
         
-        .neon-border-pink {
+        /* Efecto de Haz de Luz Rotatorio (Genérico) */
+        .neon-beam-container {
             position: relative;
-            padding: 4px;
+            padding: 3px;
             background: #050505;
-            border-radius: 40px;
             overflow: hidden !important;
-            box-shadow: 0 0 50px rgba(255, 45, 205, 0.3);
             transition: all 0.5s ease;
         }
-        .neon-border-pink::before {
+        .neon-beam-container::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -150%;
+            left: -150%;
+            width: 400%;
+            height: 400%;
             background: conic-gradient(
                 transparent, 
                 rgba(255, 45, 205, 0.1), 
@@ -78,17 +77,38 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        .neon-border-pink:hover {
-            box-shadow: 0 0 70px rgba(255, 45, 205, 0.5);
-        }
-        .hero-inner {
+        .neon-beam-inner {
             position: relative;
             z-index: 1;
             background: #050505;
-            border-radius: 36px;
             height: 100%;
             width: 100%;
             overflow: hidden;
+        }
+        
+        /* Ajustes específicos para el Hero */
+        .hero-beam {
+            border-radius: 40px;
+            padding: 4px;
+            box-shadow: 0 0 50px rgba(255, 45, 205, 0.3);
+        }
+        .hero-beam .neon-beam-inner {
+            border-radius: 36px;
+        }
+        .hero-beam:hover {
+            box-shadow: 0 0 70px rgba(255, 45, 205, 0.5);
+        }
+
+        /* Ajustes para las Tarjetas de Producto */
+        .card-beam {
+            border-radius: 24px;
+            padding: 2px;
+        }
+        .card-beam .neon-beam-inner {
+            border-radius: 22px;
+        }
+        .card-beam:hover {
+            box-shadow: 0 0 30px rgba(255, 45, 205, 0.4);
         }
     </style>
     <script type="module" src="/src/fairydust.js"></script>
@@ -128,8 +148,8 @@
 
     <main class="max-w-[1440px] mx-auto px-6 pt-32 pb-24">
         <!-- Hero Section -->
-        <section class="mb-24 h-[700px] neon-border-pink">
-            <div class="hero-inner">
+        <section class="mb-24 h-[700px] neon-beam-container hero-beam">
+            <div class="neon-beam-inner">
                 <div class="absolute inset-0">
                     <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60">
                         <source src="magic_bg_video.mp4" type="video/mp4">

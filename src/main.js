@@ -237,10 +237,12 @@ class DigitalCuratorEngine {
             const imagePath = isExternal ? item.image : `${basePath}products/${item.image}`;
             return `
                 <div class="glass-card group flex flex-col p-0 overflow-hidden animate-fade-in">
-                    <div class="relative h-80 overflow-hidden cursor-pointer" onclick="window.openProductModal('${item.id}')">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${imagePath}" loading="lazy"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 badge">${item.brand}</span>
+                    <div class="neon-beam-container card-beam cursor-pointer" onclick="window.openProductModal('${item.id}')">
+                        <div class="neon-beam-inner relative h-80 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${imagePath}" loading="lazy"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <span class="absolute top-4 left-4 badge">${item.brand}</span>
+                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex justify-between items-start mb-4">
