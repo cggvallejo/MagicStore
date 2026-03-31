@@ -1,6 +1,6 @@
 import { products as initialProducts } from './data.js';
 
-const STORAGE_KEY = 'mw_products';
+const STORAGE_KEY = 'mw_products_v2';
 
 export function getProducts() {
     const stored = localStorage.getItem(STORAGE_KEY);
