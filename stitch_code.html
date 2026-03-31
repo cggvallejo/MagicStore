@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#323031",
+              "surface-bright": "#fef8f9",
+              "primary-container": "#e5a0b4",
+              "background": "#fef8f9",
+              "inverse-on-surface": "#f5eff0",
+              "on-background": "#1d1b1c",
+              "outline-variant": "#d5c2c6",
+              "inverse-primary": "#fab3c7",
+              "surface": "#fef8f9",
+              "surface-container-highest": "#e7e1e2",
+              "surface-dim": "#ded9da",
+              "on-primary-fixed-variant": "#6a3648",
+              "error": "#ba1a1a",
+              "on-surface": "#1d1b1c",
+              "outline": "#837377",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e7e1e2",
+              "surface-tint": "#864d5f",
+              "secondary": "#735c00",
+              "on-primary-fixed": "#360c1c",
+              "on-secondary-container": "#745c00",
+              "tertiary-container": "#a5adff",
+              "surface-container-high": "#ece7e8",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#e9c349",
+              "primary-fixed": "#ffd9e2",
+              "on-secondary-fixed-variant": "#574500",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#323b94",
+              "primary": "#864d5f",
+              "on-primary-container": "#693546",
+              "secondary-fixed": "#ffe088",
+              "primary-fixed-dim": "#fab3c7",
+              "surface-container-low": "#f8f2f3",
+              "on-tertiary-fixed-variant": "#343d96",
+              "tertiary-fixed": "#e0e0ff",
+              "on-tertiary-fixed": "#000767",
+              "surface-container": "#f2eced",
+              "tertiary-fixed-dim": "#bdc2ff",
+              "secondary-container": "#fed65b",
+              "on-surface-variant": "#514347",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#241a00",
+              "error-container": "#ffdad6",
+              "on-primary": "#ffffff",
+              "tertiary": "#4c56af"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            animation: {
+              'pixie-drift': 'pixie-drift 20s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'halo-pulse': 'halo-pulse 4s ease-in-out infinite',
+            },
+            keyframes: {
+              'pixie-drift': {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '1000px 1000px' }
+              },
+              'float': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' }
+              },
+              'halo-pulse': {
+                '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                '50%': { opacity: '0.6', transform: 'scale(1.1)' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .enchanted-gradient {
+            background: linear-gradient(135deg, #864d5f 0%, #e5a0b4 100%);
+        }
+        .pixie-dust {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #ffe088 1px, transparent 1px);
+            background-size: 80px 80px;
+            z-index: 1;
+            opacity: 0.2;
+            animation: pixie-drift 60s linear infinite;
+        }
+        .magical-bg {
+            background: linear-gradient(180deg, #fef8f9 0%, #f0e6ff 50%, #ffd9e2 100%);
+        }
+        .cloud-divider {
+            height: 100px;
+            width: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f8f2f3' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,208C960,192,1056,160,1152,149.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .mouse-ears-mask {
+            mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm12 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-6 1a8 8 0 1 0 0 16 8 8 0 0 0 0-16z'/%3E%3C/svg%3E");
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm12 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-6 1a8 8 0 1 0 0 16 8 8 0 0 0 0-16z'/%3E%3C/svg%3E");
+        }
+        .product-card-glow:hover {
+            box-shadow: 0 0 40px rgba(229, 160, 180, 0.4);
+            transform: translateY(-8px);
+        }
+        .halo-effect {
+            background: radial-gradient(circle, rgba(255, 224, 136, 0.5) 0%, rgba(255, 224, 136, 0) 70%);
+        }
+    </style>
+</head>
+<body class="magical-bg text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<div class="pixie-dust"></div>
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-[0_12px_40px_rgba(29,27,28,0.06)] bg-gradient-to-b from-[#e5a0b4]/10 to-transparent">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-2 hover:scale-105 transition-transform duration-300 cursor-pointer">
+<img alt="Magic World Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFUkssEGV1ki6WP1w3Qj5wSAw2ibeNk2Pzx8RWVKfT9467ZgZHt4QcGh9glVWGzNpoH2ccN0ECbUAdxtHb5hznWKIhVztqAr9ZGiH0qcS1ycIoIU0R4Z2-6c_Shz0ZEFgLOMJa9DzYwOu0Q-8FqDJOf7sqoj4xdUFxPKRJd-Nxk4Sw1jqliJJF4uDVVVjwzTbqZjmzooX-sJBIOqB-djMRQRwMl9PxDquF4zQLJ06Vme8Fh0-_6Ge0rS9YG9by_vjlma6gbTuhxpk"/>
+<span class="text-2xl font-black text-[#864d5f] dark:text-[#e5a0b4] italic font-headline tracking-wider">Magic World</span>
+</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-headline italic text-lg tracking-wide text-[#864d5f] dark:text-[#e5a0b4] border-b-2 border-[#735c00] pb-1 hover:scale-105 transition-transform duration-300" href="#">Thermos</a>
+<a class="font-headline italic text-lg tracking-wide text-slate-600 dark:text-slate-400 hover:text-[#864d5f] hover:scale-105 transition-transform duration-300" href="#">Tuppers</a>
+<a class="font-headline italic text-lg tracking-wide text-slate-600 dark:text-slate-400 hover:text-[#864d5f] hover:scale-105 transition-transform duration-300" href="#">Breakfast</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-primary hover:scale-110 transition-transform active:animate-pulse">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20 hover:scale-110 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center justify-center overflow-hidden pt-16">
+<div class="absolute inset-0 z-0">
+<img alt="High fantasy dreamy magical castle landscape in soft pink light" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFA37qwV7GOfx8PrVPxxR5rL3KZgjnOZRgSEaVFUgXrh9UTFXXrrLmiaqxpxImZ2h6Wf4o7h0x8mNzmIWtVrTPnWRxAk_7qQX5fxqP_ONmna32BkGwhBGqHYTWtfJlUu5DIs2B704HvoVLvOwu-wZm4ZvfV1JrQHEtho-7mhaiOHq0Zz_OcQzCbeNOUwduNnOtHOMwuhGRIP2jx55dI8idIfcGo4jAJwVerzytTEg5UxCakxXZWJB5RXzGF400yssEhL0tlE3PCuc"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/80"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+<div class="text-left space-y-8">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label text-sm font-bold tracking-widest uppercase shadow-sm">The Enchanted Collection</span>
+<h1 class="text-7xl md:text-9xl font-headline font-black text-primary leading-tight">Every Sip a <br/><span class="text-secondary italic">Story</span>.</h1>
+<p class="text-xl text-on-surface-variant max-w-md font-body leading-relaxed">Bring the magic of the kingdom to your dining table with our exclusive designer kitchenware.</p>
+<div class="flex gap-4">
+<button class="px-10 py-5 enchanted-gradient text-on-primary font-bold rounded-full shadow-xl shadow-primary/20 hover:scale-105 transition-all active:scale-95 flex items-center gap-2">
+                        Explore the Kingdom <span class="material-symbols-outlined text-sm">auto_awesome</span>
+</button>
+<button class="px-10 py-5 bg-white/80 backdrop-blur text-primary font-bold rounded-full hover:bg-white transition-colors border border-primary/10">View Favorites</button>
+</div>
+</div>
+<!-- Rotating Showcase -->
+<div class="relative flex justify-center">
+<!-- Halo Effect -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-[32rem] h-[32rem] halo-effect rounded-full animate-halo-pulse"></div>
+</div>
+<div class="relative w-80 h-[28rem] bg-surface-container-lowest/60 backdrop-blur-xl rounded-2xl p-6 border border-white/50 shadow-2xl flex flex-col items-center justify-between group animate-float overflow-visible">
+<div class="absolute -top-12 -right-8 w-24 h-24 bg-secondary-fixed rounded-full flex items-center justify-center shadow-lg border-4 border-white animate-bounce">
+<span class="material-symbols-outlined text-on-secondary-fixed text-4xl" data-icon="star" data-weight="fill">star</span>
+</div>
+<div class="relative">
+<img class="w-full h-64 object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)] group-hover:scale-110 transition-transform duration-700" data-alt="Elegant metallic thermos with magical engravings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGODQV23DmwCcoqDVT_Z2uwUz7NUQUVjsMRaGHTSsl5xOAxFH2JnrNnAfNPDKN6BYHK4pUDwbwcLonR_BRWEbjq3htSIyz5wD_nIV0C94cTMMZa8fbZPYRAwAZEZ1-7AyHiA3FLKkV6aJKtjbsLcqh6MXjLxE2Q6mrbEDCbkIJeCLiG_CvGQKDJb9emfxqVKl5nFUXepCQZ7jACaEJ5_euBz6wirBmT7tUZlbvJiizhLZf1t6civSbgruwQrXu-Oz6nYbJK7i-lEE"/>
+</div>
+<div class="text-center">
+<h3 class="font-headline italic text-3xl font-bold text-primary">Stitch Thermos</h3>
+<p class="text-secondary font-bold text-2xl mt-1">$34.99</p>
+</div>
+<div class="flex gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary shadow-sm"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container/40"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container/40"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cloud Transition -->
+<div class="cloud-divider"></div>
+<!-- Categories -->
+<section class="py-20 px-6 max-w-7xl mx-auto bg-surface-container-low/50 rounded-b-[4rem]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col items-center space-y-4 group cursor-pointer">
+<div class="w-28 h-28 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container shadow-sm group-hover:shadow-lg transition-all duration-500 relative">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="castle">castle</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity bg-secondary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-fixed">auto_awesome</span>
+</div>
+</div>
+<span class="font-headline italic font-bold text-2xl text-primary">Thermos</span>
+</div>
+<div class="flex flex-col items-center space-y-4 group cursor-pointer">
+<div class="w-28 h-28 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container shadow-sm group-hover:shadow-lg transition-all duration-500 relative">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="lunch_dining">lunch_dining</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity bg-secondary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-fixed">auto_awesome</span>
+</div>
+</div>
+<span class="font-headline italic font-bold text-2xl text-primary">Tuppers</span>
+</div>
+<div class="flex flex-col items-center space-y-4 group cursor-pointer">
+<div class="w-28 h-28 rounded-full bg-white flex items-center justify-center group-hover:bg-primary-container shadow-sm group-hover:shadow-lg transition-all duration-500 relative">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="pets">pets</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity bg-secondary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-fixed">auto_awesome</span>
+</div>
+</div>
+<span class="font-headline italic font-bold text-2xl text-primary">Breakfast</span>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-32 px-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-tertiary-container/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-6">
+<div class="text-center md:text-left">
+<h2 class="text-5xl font-headline font-black text-primary italic">Kingdom Favorites</h2>
+<p class="text-on-surface-variant font-body mt-4 text-lg">The most loved treasures in the realm, chosen by you.</p>
+</div>
+<a class="group text-primary font-bold text-lg flex items-center gap-2 underline decoration-primary/20 hover:decoration-primary transition-all underline-offset-8" href="#">
+                    View All Collections 
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group relative bg-white/70 backdrop-blur-md rounded-3xl p-8 transition-all duration-500 product-card-glow border border-white/40">
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container-low mb-8 shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Blue Stitch themed thermos bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADTiEyf4Lbtp67jKPbyRJt02feFMvWBv5Mce242f3yCF0LMYH4qL-KHMKKzickVtziaKDcRf0-MgCPWS9U3N4dm1-wVkFdu6fZegWQcN1cv4k0QyJb2CqR2UUSeOUIarn1M8XFNsYrdjMxWVha8KpR3hp_PH8K7lI0u0S6wu1Fs35gw_vlpxQPnFplc2zdEGMjf2ZuDIJTvjK2KvGHpwZikdnrahoBA8KZeljdNi47OS_5JAATZ4Cq-JEnDn6-Iatl0DZ8rcHTm9w"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-label text-primary/60 uppercase tracking-[0.2em] font-bold">Limited Edition</p>
+<h3 class="text-2xl font-headline font-bold text-primary mt-2 italic">Stitch Thermos</h3>
+</div>
+<span class="text-2xl font-bold text-secondary">$34.99</span>
+</div>
+<button class="w-full mt-8 py-4 rounded-full border-2 border-primary/20 text-primary font-bold group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                        Add to Bag <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">auto_awesome</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-white/70 backdrop-blur-md rounded-3xl p-8 transition-all duration-500 product-card-glow border border-white/40">
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container-low mb-8 shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Elegant blue and gold breakfast set with carriage motifs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXd7YLafUeq3HZslOnCXV77hGAUmBeAWBR8Ybt4jM4Bfo2bywJgv3KoCe6CBBd3ukn5bXJXL_ww5lCD_F-uZGGj0-t7XFLRPYlQ6PABWAYXsG3JNSex-wlrm11dOQng93zvfxuLjTNs42WdEyTx8TCywuFmOFTFZAYdhYghYtaSD1CZsa5nbTQBexpT3daikNH0UWam-AQYeiAgqgBKFhrgE6cMTwZyZXc1l0odzPhSvRmv21okm0r3mXFdesfUTVarNDEas1fVQ0"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-label text-primary/60 uppercase tracking-[0.2em] font-bold">Royal Collection</p>
+<h3 class="text-2xl font-headline font-bold text-primary mt-2 italic">Cinderella Set</h3>
+</div>
+<span class="text-2xl font-bold text-secondary">$59.99</span>
+</div>
+<button class="w-full mt-8 py-4 rounded-full border-2 border-primary/20 text-primary font-bold group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                        Add to Bag <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">auto_awesome</span>
+</button>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-white/70 backdrop-blur-md rounded-3xl p-8 transition-all duration-500 product-card-glow border border-white/40">
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container-low mb-8 shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Red and black Mickey Mouse themed bento box container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFPGFMRr41Z5HRNMXcNVFhwhTcTyQZSk0CdMoLKr93GrWlz77E2AtaoRlCS6o3_gpdTyi0H8s0NfKDc1xrGlIZlc5NpoWrPl4NtiXXSZLpXEacCEfhp7tgt7A8BXfT4y6gyy_SNF5TWujXCKjB8U_MeOJHG8mAn9oFacNWNYCAX_xH0C7ogiOMXNTN2UoG2xQmSAidnNkZk_nMgzoC4TaI9P46n9cfW1ROgF3pmaH3BjiIZUO1px-KdEIUq5LbDG91Vih49QMbnbM"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-label text-primary/60 uppercase tracking-[0.2em] font-bold">Everyday Magic</p>
+<h3 class="text-2xl font-headline font-bold text-primary mt-2 italic">Mickey Bento Box</h3>
+</div>
+<span class="text-2xl font-bold text-secondary">$28.50</span>
+</div>
+<button class="w-full mt-8 py-4 rounded-full border-2 border-primary/20 text-primary font-bold group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                        Add to Bag <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">auto_awesome</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-[#4c56af] dark:bg-[#1a1c2e] py-16 px-6 text-center shadow-inner relative overflow-hidden">
+<div class="absolute inset-0 mouse-ears-mask bg-white/5 opacity-10 -rotate-12 translate-x-1/2 -translate-y-1/2 scale-[2]"></div>
+<div class="flex flex-col items-center max-w-7xl mx-auto space-y-10 relative z-10">
+<div class="flex flex-col items-center gap-4">
+<img alt="Magic World Logo" class="h-12 w-auto brightness-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFUkssEGV1ki6WP1w3Qj5wSAw2ibeNk2Pzx8RWVKfT9467ZgZHt4QcGh9glVWGzNpoH2ccN0ECbUAdxtHb5hznWKIhVztqAr9ZGiH0qcS1ycIoIU0R4Z2-6c_Shz0ZEFgLOMJa9DzYwOu0Q-8FqDJOf7sqoj4xdUFxPKRJd-Nxk4Sw1jqliJJF4uDVVVjwzTbqZjmzooX-sJBIOqB-djMRQRwMl9PxDquF4zQLJ06Vme8Fh0-_6Ge0rS9YG9by_vjlma6gbTuhxpk"/>
+<div class="text-3xl font-black text-[#e5a0b4] font-headline italic tracking-wider">Magic World</div>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-body text-[#ffe088] font-bold text-sm tracking-wide hover:scale-110 transition-transform" href="#">Privacy Policy</a>
+<a class="font-body text-slate-200/80 text-sm tracking-wide hover:text-[#ffe088] transition-colors" href="#">Shipping Fairy</a>
+<a class="font-body text-slate-200/80 text-sm tracking-wide hover:text-[#ffe088] transition-colors" href="#">Magic Returns</a>
+<a class="font-body text-slate-200/80 text-sm tracking-wide hover:text-[#ffe088] transition-colors" href="#">Contact Wand</a>
+</div>
+<div class="flex gap-10">
+<span class="material-symbols-outlined text-[#ffe088] text-3xl hover:scale-125 transition-transform cursor-pointer" data-icon="auto_fix_high">auto_fix_high</span>
+<span class="material-symbols-outlined text-[#ffe088] text-3xl hover:scale-125 transition-transform cursor-pointer" data-icon="star">star</span>
+<span class="material-symbols-outlined text-[#ffe088] text-3xl hover:scale-125 transition-transform cursor-pointer" data-icon="castle">castle</span>
+</div>
+<div class="pt-8 border-t border-white/10 w-full max-w-2xl">
+<p class="font-body text-sm text-slate-200/60 font-medium">© 2024 Magic World. All dreams come true.</p>
+<p class="font-body text-xs text-slate-200/40 mt-2">Crafted with authentic pixie dust and royal decree.</p>
+</div>
+</div>
+</footer>
+</body></html>
